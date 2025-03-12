@@ -1,11 +1,7 @@
 # Problem 1
 
-# **Investigating the Range as a Function of the Angle of Projection**
+# **Investigating the Range as a Function of the Angle of Projection*
 
-## **Motivation**
-Projectile motion helps us understand how objects move through the air. The goal is to study how the range (horizontal distance) of a projectile depends on the launch angle.
-
----
 
 ## **1. Theoretical Foundation**
 The horizontal range $R$ of a projectile is given by:
