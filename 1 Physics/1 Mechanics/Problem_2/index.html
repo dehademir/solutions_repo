@@ -172,6 +172,25 @@
 <div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
 <div class="section" itemprop="articleBody">
 <h1 id="problem-2">Problem 2</h1>
+<h1 id="dynamics-of-a-damped-pendulum">Dynamics of a Damped Pendulum</h1>
+<p>A <strong>damped pendulum</strong> is a simple pendulum that experiences resistive forces, such as air resistance or friction at the pivot. The equation of motion for a damped pendulum is:</p>
+<div class="arithmatex">\[
+\frac{d^2\theta}{dt^2} + \frac{b}{m} \frac{d\theta}{dt} + \frac{g}{L} \sin\theta = 0
+\]</div>
+<p>where:<br/>
+- <span class="arithmatex">\(\theta\)</span> is the angular displacement,<br/>
+- <span class="arithmatex">\(b\)</span> is the damping coefficient,<br/>
+- <span class="arithmatex">\(m\)</span> is the mass of the pendulum,<br/>
+- <span class="arithmatex">\(g\)</span> is the gravitational acceleration (<span class="arithmatex">\(9.81 \, m/s^2\)</span>),<br/>
+- <span class="arithmatex">\(L\)</span> is the length of the pendulum.  </p>
+<h2 id="types-of-damping">Types of Damping</h2>
+<ol>
+<li><strong>Underdamped (<span class="arithmatex">\(b/m\)</span> is small):</strong> The pendulum oscillates but with decreasing amplitude.  </li>
+<li><strong>Critically damped (<span class="arithmatex">\(b/m\)</span> is optimal):</strong> The pendulum returns to equilibrium without oscillating.  </li>
+<li><strong>Overdamped (<span class="arithmatex">\(b/m\)</span> is large):</strong> The pendulum slowly returns to equilibrium without oscillating.  </li>
+</ol>
+<h2 id="python-visualization">Python Visualization:</h2>
+<p><img alt="alt text" src="../image-1.png"/></p>
 </div>
 </div><footer>
 <div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">
