@@ -33,19 +33,19 @@ This gives two independent equations:
 
 - **Horizontal Motion ($x$-direction):**
   
-  $
+  $$
   \frac{d^2 x}{dt^2} = 0 \quad \Rightarrow \quad v_x = v_0 \cos\theta
-  $
+  $$
 
-  $
+  $$
   x(t) = v_0 \cos\theta \cdot t
-  $
+  $$
 
 - **Vertical Motion ($y$-direction):**
   
-  $
+  $$
   \frac{d^2 y}{dt^2} = -g
-  $
+  $$
 
   Integrating:
 
