@@ -172,34 +172,70 @@
 <div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
 <div class="section" itemprop="articleBody">
 <h1 id="problem-1">Problem 1</h1>
-<h1 id="investigating-the-range-as-a-function-of-the-angle-of-projection">*<em>Investigating the Range as a Function of the Angle of Projection</em></h1>
+<h1 id="mechanics-problem-1-investigating-the-range-as-a-function-of-the-angle-of-projection"><strong>Mechanics Problem 1: Investigating the Range as a Function of the Angle of Projection</strong></h1>
 <h2 id="1-theoretical-foundation"><strong>1. Theoretical Foundation</strong></h2>
-<p>The horizontal range <span class="arithmatex">\(R\)</span> of a projectile is given by:</p>
+<h3 id="newtons-second-law"><strong>Newton’s Second Law</strong></h3>
+<p>Newton’s second law states:</p>
+<div class="arithmatex">\[
+\vec{F} = m \vec{a}
+\]</div>
+<p>For a projectile in free fall under gravity:</p>
+<div class="arithmatex">\[
+\vec{F} = -mg \hat{j}
+\]</div>
+<p>Since acceleration is the second derivative of position:</p>
+<div class="arithmatex">\[
+m \frac{d^2 \vec{r}}{dt^2} = -mg \hat{j}
+\]</div>
+<p>Dividing by mass:</p>
+<div class="arithmatex">\[
+\frac{d^2 \vec{r}}{dt^2} = -g \hat{j}
+\]</div>
+<p>This gives two independent equations:</p>
+<ul>
+<li><strong>Horizontal Motion (<span class="arithmatex">\(x\)</span>-direction):</strong></li>
+</ul>
+<p>$$
+  \frac{d^2 x}{dt^2} = 0 \quad \Rightarrow \quad v_x = v_0 \cos\theta
+  $$</p>
+<p>$$ 
+  x(t) = v_0 \cos\theta \cdot t
+  $$</p>
+<ul>
+<li><strong>Vertical Motion (<span class="arithmatex">\(y\)</span>-direction):</strong></li>
+</ul>
+<p>$$
+  \frac{d^2 y}{dt^2} = -g
+  $$</p>
+<p>Integrating:</p>
+<p>$$
+  v_y = v_0 \sin\theta - gt
+  $$</p>
+<p>$$ 
+  y(t) = h + v_0 \sin\theta \cdot t - \frac{1}{2} g t^2
+  $$</p>
+<h3 id="time-of-flight"><strong>Time of Flight</strong></h3>
+<p>Solving <span class="arithmatex">\(y(T) = 0\)</span>:</p>
+<div class="arithmatex">\[
+h + v_0 \sin\theta \cdot T - \frac{1}{2} g T^2 = 0
+\]</div>
+<p>Solving for <span class="arithmatex">\(T\)</span>:</p>
+<div class="arithmatex">\[
+T = \frac{v_0 \sin\theta + \sqrt{(v_0 \sin\theta)^2 + 2gh}}{g}
+\]</div>
+<h3 id="range-equation"><strong>Range Equation</strong></h3>
+<p>The range is:</p>
+<div class="arithmatex">\[
+R = v_0 \cos\theta \cdot T
+\]</div>
+<p>Substituting <span class="arithmatex">\(T\)</span>:</p>
+<div class="arithmatex">\[
+R = \frac{v_0 \cos\theta (v_0 \sin\theta + \sqrt{(v_0 \sin\theta)^2 + 2gh})}{g}
+\]</div>
+<p>For <span class="arithmatex">\(h = 0\)</span>:</p>
 <div class="arithmatex">\[
 R = \frac{v_0^2 \sin(2\theta)}{g}
 \]</div>
-<p>where:
-- <span class="arithmatex">\(v_0\)</span> = initial velocity
-- <span class="arithmatex">\(\theta\)</span> = launch angle
-- <span class="arithmatex">\(g\)</span> = gravitational acceleration</p>
-<p>The maximum range occurs at <span class="arithmatex">\(\theta = 45^\circ\)</span>.</p>
-<hr/>
-<h2 id="2-range-analysis"><strong>2. Range Analysis</strong></h2>
-<ul>
-<li>The range is <strong>maximized at 45°</strong>.</li>
-<li><strong>Higher initial velocity (<span class="arithmatex">\(v_0\)</span>)</strong> increases the range.</li>
-<li><strong>Stronger gravity (<span class="arithmatex">\(g\)</span>)</strong> decreases the range.</li>
-</ul>
-<hr/>
-<h2 id="3-practical-applications"><strong>3. Practical Applications</strong></h2>
-<ul>
-<li><strong>Sports</strong>: Finding the best angle for kicking a soccer ball.</li>
-<li><strong>Engineering</strong>: Designing projectile launch systems.</li>
-<li><strong>Space Science</strong>: Understanding rocket trajectories.</li>
-</ul>
-<hr/>
-<h2 id="4-python-simulation"><strong>4. Python Simulation</strong></h2>
-<p>This Python code plots the range vs. launch angle:</p>
 <h2 id="python-visualization">Python Visualization:</h2>
 <p><img alt="alt text" src="../image.png"/></p>
 </div>
