@@ -128,4 +128,10 @@ This equation tells us that **the maximum range occurs at $\theta = 45^\circ$**,
 
 ## Python Visualization:
 
+https://colab.research.google.com/drive/1OJ9PvOWkqUUzbr23i4xrCo_lYyVzG-4J
+
 ![alt text](image.png)
+
+https://colab.research.google.com/drive/1pjSAtyFPm4nVpRGA02_JjOp854q0Tnnk
+
+![alt text](image-2.png)
