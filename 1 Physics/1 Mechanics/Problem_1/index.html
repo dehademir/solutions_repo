@@ -274,10 +274,130 @@ R = \frac{v_0^2 \sin(2\theta)}{g}
 \]</div>
 <p>This equation tells us that <strong>the maximum range occurs at <span class="arithmatex">\(\theta = 45^\circ\)</span></strong>, assuming no air resistance.</p>
 <h2 id="python-visualization">Python Visualization:</h2>
-<p>https://colab.research.google.com/drive/1OJ9PvOWkqUUzbr23i4xrCo_lYyVzG-4J</p>
+<p>Collab Visualization: https://colab.research.google.com/drive/1OJ9PvOWkqUUzbr23i4xrCo_lYyVzG-4J</p>
 <p><img alt="alt text" src="../image.png"/></p>
-<p>https://colab.research.google.com/drive/1pjSAtyFPm4nVpRGA02_JjOp854q0Tnnk</p>
+<h1 id="projectile-range-vs-launch-angle"><strong>Projectile Range vs. Launch Angle</strong></h1>
+<h2 id="introduction"><strong>Introduction</strong></h2>
+<p>The plot represents the relationship between the <strong>range of a projectile</strong> and its <strong>launch angle</strong> in a uniform gravitational field, assuming <strong>no air resistance</strong>. It shows how the horizontal displacement of a projectile changes with different launch angles.</p>
+<h2 id="understanding-the-axes"><strong>Understanding the Axes</strong></h2>
+<ul>
+<li><strong>X-axis (<code>Launch Angle (degrees)</code>)</strong>: Represents the angle at which the projectile is launched, ranging from <code>0°</code> to <code>90°</code>.</li>
+<li><strong>Y-axis (<code>Range (meters)</code>)</strong>: Represents the horizontal distance (range) the projectile travels before hitting the ground.</li>
+</ul>
+<h2 id="key-observations-from-the-graph"><strong>Key Observations from the Graph</strong></h2>
+<ol>
+<li>The <strong>curve is symmetric</strong> about <code>45°</code>, meaning that launching a projectile at an angle <code>θ</code> gives the same range as launching at <code>90° - θ</code>. For example, <code>30°</code> and <code>60°</code> provide the same range.</li>
+<li>The <strong>maximum range</strong> occurs at <code>45°</code>, which is highlighted by the red dashed vertical line.</li>
+<li>As the launch angle increases from <code>0°</code> to <code>45°</code>, the range <strong>increases</strong>.</li>
+<li>Beyond <code>45°</code>, the range <strong>decreases</strong>, reaching <code>0</code> again at <code>90°</code>.</li>
+</ol>
+<h2 id="physics-behind-the-graph"><strong>Physics Behind the Graph</strong></h2>
+<p>The range <code>R</code> of a projectile launched with initial velocity <code>v₀</code> at angle <code>θ</code> is given by:</p>
+<p>$
+R = \frac{v₀^2 \sin(2θ)}{g}
+$</p>
+<p>where:
+- <code>v₀</code> is the initial velocity,
+- <code>g</code> is the acceleration due to gravity (<code>9.81 m/s²</code> on Earth),
+- <code>θ</code> is the launch angle.</p>
+<h3 id="why-is-maximum-range-at-45"><strong>Why is Maximum Range at 45°?</strong></h3>
+<ul>
+<li>The range formula contains <code>sin(2θ)</code>, which reaches its maximum when <code>2θ = 90°</code>, i.e., <code>θ = 45°</code>.</li>
+<li>At <code>45°</code>, the horizontal and vertical components of velocity are <strong>equal</strong>, maximizing the distance covered before the projectile lands.</li>
+</ul>
+<h2 id="legend-explanation"><strong>Legend Explanation</strong></h2>
+<ul>
+<li><strong>Blue Curve</strong>: "Range vs Angle" - This shows how the range varies with launch angle.</li>
+<li><strong>Red Dashed Line at <code>45°</code></strong>: "Max Range at 45°" - Highlights the optimal angle for achieving the longest range.</li>
+</ul>
+<h2 id="conclusion"><strong>Conclusion</strong></h2>
+<p>This plot illustrates the fundamental principle of projectile motion: <strong>the launch angle of 45° provides the maximum range</strong> in an idealized environment. The symmetry of the curve reflects the trade-off between vertical and horizontal components of velocity as the angle changes.</p>
+<p>Collab Visualization: https://colab.research.google.com/drive/1pjSAtyFPm4nVpRGA02_JjOp854q0Tnnk</p>
 <p><img alt="alt text" src="../image-2.png"/></p>
+<h1 id="projectile-motion-for-different-initial-velocities-and-angles"><strong>Projectile Motion for Different Initial Velocities and Angles</strong></h1>
+<h2 id="introduction_1"><strong>Introduction</strong></h2>
+<p>This graph illustrates the <strong>trajectory of projectiles</strong> launched at different <strong>initial velocities</strong> (<code>v₀</code>) and <strong>launch angles</strong> (<code>θ</code>). The trajectories follow <strong>parabolic paths</strong>, which is a fundamental characteristic of motion under uniform gravitational acceleration.</p>
+<h2 id="understanding-the-axes_1"><strong>Understanding the Axes</strong></h2>
+<ul>
+<li><strong>X-axis (<code>Horizontal Distance (m)</code>)</strong>: Represents the horizontal displacement of the projectile.</li>
+<li><strong>Y-axis (<code>Vertical Distance (m)</code>)</strong>: Represents the height of the projectile at different points in its trajectory.</li>
+</ul>
+<h2 id="legend-explanation_1"><strong>Legend Explanation</strong></h2>
+<p>The legend on the right specifies different launch conditions:
+- <strong>Solid Lines</strong> represent projectiles launched at <code>θ = 45°</code> with different initial velocities (<code>30 m/s</code>, <code>40 m/s</code>, <code>50 m/s</code>).
+- <strong>Dashed Lines</strong> indicate projectiles launched at different angles (<code>15°</code> and <code>75°</code>) but with the same initial velocity (<code>50 m/s</code>).</p>
+<p>Each curve represents the path taken by a projectile under a given launch condition.</p>
+<h2 id="key-observations"><strong>Key Observations</strong></h2>
+<ol>
+<li><strong>Effect of Increasing Initial Velocity (<code>v₀</code>) at <code>45°</code></strong>:</li>
+<li>The <strong>blue, orange, and green curves</strong> correspond to increasing values of <code>v₀ = 30, 40, 50 m/s</code>, respectively.</li>
+<li>As <code>v₀</code> increases, both <strong>maximum height</strong> and <strong>range</strong> increase.</li>
+<li>
+<p>The projectile with <code>v₀ = 50 m/s</code> (green) covers the greatest horizontal distance.</p>
+</li>
+<li>
+<p><strong>Effect of Different Launch Angles at <code>v₀ = 50 m/s</code></strong>:</p>
+</li>
+<li>The <strong>red dashed curve (<code>15°</code>)</strong> has a lower trajectory and a <strong>shorter range</strong> due to its low vertical component.</li>
+<li>The <strong>brown dashed curve (<code>75°</code>)</strong> has a much higher peak but a <strong>shorter horizontal range</strong>, as more energy is directed into vertical motion.</li>
+<li>The <strong>green solid curve (<code>45°</code>)</strong> has the <strong>maximum range</strong>, confirming that <code>45°</code> is the optimal angle for distance in ideal projectile motion.</li>
+</ol>
+<h2 id="physics-behind-the-graph_1"><strong>Physics Behind the Graph</strong></h2>
+<p>The motion follows the kinematic equations:</p>
+<h3 id="equations-of-motion"><strong>Equations of Motion</strong></h3>
+<ol>
+<li><strong>Horizontal Position:</strong>
+   $
+   x = v_0 \cos(\theta) t
+   $</li>
+<li>Determines how far the projectile moves in the horizontal direction.</li>
+<li>
+<p>The horizontal velocity remains constant (assuming no air resistance).</p>
+</li>
+<li>
+<p><strong>Vertical Position:</strong>
+   $
+   y = v_0 \sin(\theta) t - \frac{1}{2} g t^2
+   $</p>
+</li>
+<li>
+<p>The projectile first rises, slows down due to gravity, and then falls back to the ground.</p>
+</li>
+<li>
+<p><strong>Time of Flight:</strong>
+   $
+   T = \frac{2 v_0 \sin(\theta)}{g}
+   $</p>
+</li>
+<li>
+<p>Higher launch angles result in longer flight times.</p>
+</li>
+<li>
+<p><strong>Range:</strong>
+   $
+   R = \frac{v_0^2 \sin(2\theta)}{g}
+   $</p>
+</li>
+<li>
+<p><code>R</code> is maximized at <code>θ = 45°</code> in the absence of air resistance.</p>
+</li>
+<li>
+<p><strong>Maximum Height:</strong>
+   $
+   H = \frac{(v_0 \sin(\theta))^2}{2g}
+   $</p>
+</li>
+<li>Larger <code>θ</code> results in a higher peak.</li>
+</ol>
+<h2 id="conclusion_1"><strong>Conclusion</strong></h2>
+<ul>
+<li>The <strong>optimal launch angle for maximum range is <code>45°</code></strong>.</li>
+<li>Increasing <strong>initial velocity (<code>v₀</code>)</strong> increases both range and height.</li>
+<li><strong>Lower angles (<code>15°</code>)</strong> result in a flatter trajectory with less height.</li>
+<li><strong>Higher angles (<code>75°</code>)</strong> yield greater height but shorter range.</li>
+<li>The <strong>trajectories are parabolic</strong>, as expected for projectile motion under uniform gravity.</li>
+</ul>
+<p>This plot effectively demonstrates the effect of velocity and angle on projectile motion.</p>
 </div>
 </div><footer>
 <div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">
