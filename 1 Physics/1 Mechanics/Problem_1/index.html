@@ -173,17 +173,27 @@
 <div class="section" itemprop="articleBody">
 <h1 id="problem-1">Problem 1</h1>
 <h1 id="mechanics-problem-1-investigating-the-range-as-a-function-of-the-angle-of-projection"><strong>Mechanics Problem 1: Investigating the Range as a Function of the Angle of Projection</strong></h1>
-<h2 id="1-theoretical-foundation"><strong>1. Theoretical Foundation</strong></h2>
+<h2 id="1-introduction-and-motivation"><strong>1. Introduction and Motivation</strong></h2>
+<p>Projectile motion is one of the most fundamental topics in mechanics, with applications in sports, ballistics, space exploration, and engineering. Understanding how the <strong>range of a projectile</strong> varies with its <strong>launch angle</strong> is crucial in many real-world scenarios:</p>
+<ul>
+<li><strong>Sports Science</strong>: Optimizing a soccer player's free-kick or a basketball shot.</li>
+<li><strong>Military and Ballistics</strong>: Calculating the range of a projectile in different terrains.</li>
+<li><strong>Space Science</strong>: Predicting the trajectory of spacecraft launched from different planets.</li>
+<li><strong>Engineering</strong>: Designing water fountains or roller coasters with precise parabolic arcs.</li>
+</ul>
+<p>In this study, we investigate how the range of a projectile depends on the launch angle and explore factors that influence projectile motion.</p>
+<hr/>
+<h2 id="2-theoretical-foundation"><strong>2. Theoretical Foundation</strong></h2>
 <h3 id="newtons-second-law"><strong>Newton’s Second Law</strong></h3>
-<p>Newton’s second law states:</p>
+<p>Newton’s second law states that the force acting on an object is equal to the product of its mass and acceleration:</p>
 <div class="arithmatex">\[
 \vec{F} = m \vec{a}
 \]</div>
-<p>For a projectile in free fall under gravity:</p>
+<p>For a projectile in free fall under Earth's gravitational field, the only force acting on it is gravity:</p>
 <div class="arithmatex">\[
 \vec{F} = -mg \hat{j}
 \]</div>
-<p>Since acceleration is the second derivative of position:</p>
+<p>Since acceleration is the second derivative of position with respect to time, Newton’s second law can be written as:</p>
 <div class="arithmatex">\[
 m \frac{d^2 \vec{r}}{dt^2} = -mg \hat{j}
 \]</div>
@@ -191,40 +201,66 @@ m \frac{d^2 \vec{r}}{dt^2} = -mg \hat{j}
 <div class="arithmatex">\[
 \frac{d^2 \vec{r}}{dt^2} = -g \hat{j}
 \]</div>
-<p>This gives two independent equations:</p>
+<p>This equation shows that the object experiences <strong>constant downward acceleration</strong> due to gravity while moving freely in space.</p>
+<hr/>
+<h2 id="3-equations-of-motion"><strong>3. Equations of Motion</strong></h2>
+<p>Projectile motion consists of <strong>two independent components</strong>:  </p>
 <ul>
-<li><strong>Horizontal Motion (<span class="arithmatex">\(x\)</span>-direction):</strong></li>
+<li><strong>Horizontal Motion (<span class="arithmatex">\(x\)</span>-direction)</strong>:</li>
+<li>
+<p>No force acts in the horizontal direction, so acceleration is zero.</p>
+<div class="arithmatex">\[
+\frac{d^2 x}{dt^2} = 0
+\]</div>
+</li>
+<li>
+<p>The horizontal velocity remains constant:</p>
+<div class="arithmatex">\[
+v_x = v_0 \cos\theta
+\]</div>
+</li>
+<li>
+<p>The horizontal position as a function of time:</p>
+<div class="arithmatex">\[ 
+x(t) = v_0 \cos\theta \cdot t
+\]</div>
+</li>
+<li>
+<p><strong>Vertical Motion (<span class="arithmatex">\(y\)</span>-direction)</strong>:</p>
+</li>
+<li>
+<p>Gravity is the only force acting, so acceleration is:</p>
+<div class="arithmatex">\[
+\frac{d^2 y}{dt^2} = -g
+\]</div>
+</li>
+<li>
+<p>The vertical velocity changes over time:</p>
+<div class="arithmatex">\[
+v_y = v_0 \sin\theta - gt
+\]</div>
+</li>
+<li>
+<p>The vertical position equation:</p>
+<div class="arithmatex">\[ 
+y(t) = h + v_0 \sin\theta \cdot t - \frac{1}{2} g t^2
+\]</div>
+</li>
 </ul>
-<p>$$
-  \frac{d^2 x}{dt^2} = 0 \quad \Rightarrow \quad v_x = v_0 \cos\theta
-  $$</p>
-<p>$$
-  x(t) = v_0 \cos\theta \cdot t
-  $$</p>
-<ul>
-<li><strong>Vertical Motion (<span class="arithmatex">\(y\)</span>-direction):</strong></li>
-</ul>
-<p>$$
-  \frac{d^2 y}{dt^2} = -g
-  $$</p>
-<p>Integrating:</p>
-<p>$$
-  v_y = v_0 \sin\theta - gt
-  $$</p>
-<p>$$ 
-  y(t) = h + v_0 \sin\theta \cdot t - \frac{1}{2} g t^2
-  $$</p>
-<h3 id="time-of-flight"><strong>Time of Flight</strong></h3>
-<p>Solving <span class="arithmatex">\(y(T) = 0\)</span>:</p>
+<hr/>
+<h2 id="4-time-of-flight"><strong>4. Time of Flight</strong></h2>
+<p>The total time the projectile spends in the air is obtained by solving for <span class="arithmatex">\(T\)</span> when the projectile lands (<span class="arithmatex">\(y(T) = 0\)</span>):</p>
 <div class="arithmatex">\[
 h + v_0 \sin\theta \cdot T - \frac{1}{2} g T^2 = 0
 \]</div>
-<p>Solving for <span class="arithmatex">\(T\)</span>:</p>
+<p>Solving for <span class="arithmatex">\(T\)</span> using the quadratic formula:</p>
 <div class="arithmatex">\[
 T = \frac{v_0 \sin\theta + \sqrt{(v_0 \sin\theta)^2 + 2gh}}{g}
 \]</div>
-<h3 id="range-equation"><strong>Range Equation</strong></h3>
-<p>The range is:</p>
+<p>This equation gives the <strong>total duration</strong> the projectile remains airborne.</p>
+<hr/>
+<h2 id="5-range-equation"><strong>5. Range Equation</strong></h2>
+<p>The range (<span class="arithmatex">\(R\)</span>) is the total horizontal distance traveled:</p>
 <div class="arithmatex">\[
 R = v_0 \cos\theta \cdot T
 \]</div>
@@ -232,10 +268,11 @@ R = v_0 \cos\theta \cdot T
 <div class="arithmatex">\[
 R = \frac{v_0 \cos\theta (v_0 \sin\theta + \sqrt{(v_0 \sin\theta)^2 + 2gh})}{g}
 \]</div>
-<p>For <span class="arithmatex">\(h = 0\)</span>:</p>
+<p>For <strong>flat ground</strong> (<span class="arithmatex">\(h = 0\)</span>), the well-known formula simplifies to:</p>
 <div class="arithmatex">\[
 R = \frac{v_0^2 \sin(2\theta)}{g}
 \]</div>
+<p>This equation tells us that <strong>the maximum range occurs at <span class="arithmatex">\(\theta = 45^\circ\)</span></strong>, assuming no air resistance.</p>
 <h2 id="python-visualization">Python Visualization:</h2>
 <p><img alt="alt text" src="../image.png"/></p>
 </div>
