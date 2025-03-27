@@ -193,16 +193,16 @@ $$
 $$<br/>
 where:<br/>
 - $ \theta $ = Angular displacement.<br/>
-- $ b $ = Damping coefficient (frictional resistance).<br/>
-- $ g $ = Acceleration due to gravity.<br/>
-- $ L $ = Length of the pendulum.<br/>
-- $ A $ = Amplitude of the external periodic forcing.<br/>
-- $ \omega $ = Driving frequency of the external force.  </p>
-<p>For <strong>small angles</strong> ($ \theta \approx \sin\theta $), the equation simplifies to a <strong>driven damped harmonic oscillator</strong>, but for larger angles, <strong>nonlinear effects</strong> dominate.  </p>
+- <span class="arithmatex">\(b\)</span> = Damping coefficient (frictional resistance).<br/>
+- <span class="arithmatex">\(g\)</span> = Acceleration due to gravity.<br/>
+- <span class="arithmatex">\(L\)</span> = Length of the pendulum.<br/>
+- <span class="arithmatex">\(A\)</span> = Amplitude of the external periodic forcing.<br/>
+- <span class="arithmatex">\(\omega\)</span> = Driving frequency of the external force.  </p>
+<p>For <strong>small angles</strong> (<span class="arithmatex">\(\theta \approx \sin\theta\)</span>), the equation simplifies to a <strong>driven damped harmonic oscillator</strong>, but for larger angles, <strong>nonlinear effects</strong> dominate.  </p>
 <hr/>
 <h2 id="python-implementation-visualizations">🖥 Python Implementation &amp; Visualizations</h2>
 <h3 id="1-time-evolution-of-the-pendulum-motion">📌 <strong>1. Time Evolution of the Pendulum Motion</strong></h3>
-<p>This plot shows how <strong>angular displacement</strong> $ \theta(t) $ and <strong>angular velocity</strong> $ \omega(t) $ change over time.</p>
+<p>This plot shows how <strong>angular displacement</strong> <span class="arithmatex">\(\theta(t)\)</span> and <strong>angular velocity</strong> <span class="arithmatex">\(\omega(t)\)</span> change over time.</p>
 <h2 id="python-visualization">Python Visualization:</h2>
 <p>Collab Visualizations: https://colab.research.google.com/drive/1HdLCwRAtk3ty0qajcd27SlMUS8OqSkiG</p>
 <p><img alt="alt text" src="../image-3.png"/></p>
@@ -269,7 +269,7 @@ where:<br/>
 <li><strong>Periodic Motion:</strong></li>
 <li>If the system is periodic, the Poincaré section will consist of a finite number of distinct points.</li>
 <li>
-<p>In the given plot, there appears to be a strong clustering of points around a particular value of <span class="arithmatex">\( \theta \)</span> and <span class="arithmatex">\( \omega \)</span>, suggesting periodic motion.</p>
+<p>In the given plot, there appears to be a strong clustering of points around a particular value of <span class="arithmatex">\(\theta\)</span> and <span class="arithmatex">\(\omega\)</span>, suggesting periodic motion.</p>
 </li>
 <li>
 <p><strong>Quasi-Periodic Motion:</strong></p>
@@ -285,7 +285,7 @@ where:<br/>
 </ol>
 <h2 id="key-observations">Key Observations</h2>
 <ul>
-<li>The dense vertical clustering around <span class="arithmatex">\( \theta \approx 0.208 \)</span> rad and <span class="arithmatex">\( \omega \approx 0.027 \)</span> rad/s suggests a periodic attractor.</li>
+<li>The dense vertical clustering around <span class="arithmatex">\(\theta \approx 0.208\)</span> rad and <span class="arithmatex">\(\omega \approx 0.027\)</span> rad/s suggests a periodic attractor.</li>
 <li>Some outlier points indicate that the system might have transient or weak chaotic behavior.</li>
 <li>The periodicity of the pendulum is evident from the regular pattern of points.</li>
 </ul>
