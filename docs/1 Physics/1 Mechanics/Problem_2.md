@@ -26,20 +26,20 @@ $$
 $$  
 where:  
 - $ \theta $ = Angular displacement.  
-- $ b $ = Damping coefficient (frictional resistance).  
-- $ g $ = Acceleration due to gravity.  
-- $ L $ = Length of the pendulum.  
-- $ A $ = Amplitude of the external periodic forcing.  
-- $ \omega $ = Driving frequency of the external force.  
+- $b$ = Damping coefficient (frictional resistance).  
+- $g$ = Acceleration due to gravity.  
+- $L$ = Length of the pendulum.  
+- $A$ = Amplitude of the external periodic forcing.  
+- $\omega$ = Driving frequency of the external force.  
 
-For **small angles** ($ \theta \approx \sin\theta $), the equation simplifies to a **driven damped harmonic oscillator**, but for larger angles, **nonlinear effects** dominate.  
+For **small angles** ($\theta \approx \sin\theta$), the equation simplifies to a **driven damped harmonic oscillator**, but for larger angles, **nonlinear effects** dominate.  
 
 ---
 
 ## 🖥 Python Implementation & Visualizations  
 
 ### 📌 **1. Time Evolution of the Pendulum Motion**  
-This plot shows how **angular displacement** $ \theta(t) $ and **angular velocity** $ \omega(t) $ change over time.
+This plot shows how **angular displacement** $\theta(t)$ and **angular velocity** $\omega(t)$ change over time.
 
 ## Python Visualization:
 
@@ -113,7 +113,7 @@ A **Poincaré section** is a technique used in dynamical systems analysis to stu
 ## Interpretation of the Poincaré Section
 1. **Periodic Motion:**
    - If the system is periodic, the Poincaré section will consist of a finite number of distinct points.
-   - In the given plot, there appears to be a strong clustering of points around a particular value of \( \theta \) and \( \omega \), suggesting periodic motion.
+   - In the given plot, there appears to be a strong clustering of points around a particular value of $\theta$ and $\omega$, suggesting periodic motion.
 
 2. **Quasi-Periodic Motion:**
    - If the system is quasi-periodic, the points form a closed curve or a toroidal shape in higher dimensions.
@@ -123,7 +123,7 @@ A **Poincaré section** is a technique used in dynamical systems analysis to stu
    - The presence of some outlier points may suggest transitions between periodic and chaotic behavior.
 
 ## Key Observations
-- The dense vertical clustering around \( \theta \approx 0.208 \) rad and \( \omega \approx 0.027 \) rad/s suggests a periodic attractor.
+- The dense vertical clustering around $\theta \approx 0.208$ rad and $\omega \approx 0.027$ rad/s suggests a periodic attractor.
 - Some outlier points indicate that the system might have transient or weak chaotic behavior.
 - The periodicity of the pendulum is evident from the regular pattern of points.
 
