@@ -117,7 +117,7 @@ This plot visually simplifies the concept of **circular orbits** around a centra
 ## **Conclusion of Both Visualizations**
 
 Together, these two visualizations provide:
-1. A **mathematical validation** of Kepler's Third Law by plotting $ T^2 $ vs. $ r^3 $, demonstrating that the orbital period squared is proportional to the orbital radius cubed.
+1. A **mathematical validation** of Kepler's Third Law by plotting $T^2$ vs. $r^3$, demonstrating that the orbital period squared is proportional to the orbital radius cubed.
 2. A **conceptual demonstration** of the orbits of planets around the Sun, showing how distance from the Sun influences the time it takes for a planet to complete one orbit.
 
 These visualizations provide a deep understanding of how Kepler's laws describe planetary motion and can be used to make predictions about orbital characteristics of celestial bodies.
