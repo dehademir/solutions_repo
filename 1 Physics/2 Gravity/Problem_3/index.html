@@ -6,13 +6,13 @@
 <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <link href="../../../img/favicon.ico" rel="shortcut icon"/>
-<title>Problem 3 - Physics and Mathematics</title>
+<title>Trajectories of a Freely Released Payload Near Earth - Physics and Mathematics</title>
 <link href="../../../css/theme.css" rel="stylesheet"/>
 <link href="../../../css/theme_extra.css" rel="stylesheet"/>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" rel="stylesheet"/>
 <script>
         // Current page data
-        var mkdocs_page_name = "Problem 3";
+        var mkdocs_page_name = "Trajectories of a Freely Released Payload Near Earth";
         var mkdocs_page_input_path = "1 Physics/2 Gravity/Problem_3.md";
         var mkdocs_page_url = null;
       </script>
@@ -58,8 +58,50 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../Problem_2/">Problem 2</a>
 </li>
-<li class="toctree-l2 current"><a class="reference internal current" href="#">Problem 3</a>
+<li class="toctree-l2 current"><a class="reference internal current" href="#">Trajectories of a Freely Released Payload Near Earth</a>
 <ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="#1-introduction-to-trajectories-near-earth">1. Introduction to Trajectories Near Earth</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#2-gravitational-forces-and-trajectory-equations">2. Gravitational Forces and Trajectory Equations</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#3-types-of-trajectories">3. Types of Trajectories</a>
+<ul>
+<li class="toctree-l4"><a class="reference internal" href="#a-parabolic-trajectory">a) Parabolic Trajectory</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#b-elliptical-trajectory">b) Elliptical Trajectory</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#c-hyperbolic-trajectory">c) Hyperbolic Trajectory</a>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#4-numerical-analysis-and-simulation">4. Numerical Analysis and Simulation</a>
+<ul>
+<li class="toctree-l4"><a class="reference internal" href="#a-initial-conditions">a) Initial Conditions</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#b-numerical-methods">b) Numerical Methods</a>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#5-space-mission-scenarios-orbital-insertion-reentry-and-escape">5. Space Mission Scenarios: Orbital Insertion, Reentry, and Escape</a>
+<ul>
+<li class="toctree-l4"><a class="reference internal" href="#a-orbital-insertion">a) Orbital Insertion</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#b-reentry">b) Reentry</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#c-escape">c) Escape</a>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#6-computational-tool-simulation-and-visualization">6. Computational Tool: Simulation and Visualization</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#7-deliverables">7. Deliverables</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#8-conclusion">8. Conclusion</a>
+<ul>
+<li class="toctree-l4"><a class="reference internal" href="#2-radial-distance-vs-time">2. Radial Distance vs Time:</a>
+</li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -163,7 +205,7 @@
 <li><a aria-label="Docs" class="icon icon-home" href="../../.."></a></li>
 <li class="breadcrumb-item">1 Physics</li>
 <li class="breadcrumb-item">2 Gravity</li>
-<li class="breadcrumb-item active">Problem 3</li>
+<li class="breadcrumb-item active">Trajectories of a Freely Released Payload Near Earth</li>
 <li class="wy-breadcrumbs-aside">
 </li>
 </ul>
@@ -171,28 +213,140 @@
 </div>
 <div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
 <div class="section" itemprop="articleBody">
-<h1 id="problem-3">Problem 3</h1>
-<h1 id="trajectories-of-a-freely-released-payload-near-earth"><strong>Trajectories of a Freely Released Payload Near Earth</strong></h1>
-<h2 id="problem-statement"><strong>Problem Statement</strong></h2>
-<p>When an object is released from a moving rocket near Earth, its trajectory depends on <strong>initial velocity</strong> and <strong>gravitational forces</strong>. This problem involves <strong>orbital mechanics</strong> and requires numerical methods for accurate simulations. </p>
-<h3 id="key-concepts"><strong>Key Concepts</strong></h3>
+<h1 id="trajectories-of-a-freely-released-payload-near-earth">Trajectories of a Freely Released Payload Near Earth</h1>
+<h2 id="1-introduction-to-trajectories-near-earth">1. Introduction to Trajectories Near Earth</h2>
+<p>When an object is released from a moving rocket near Earth, its trajectory will depend on several factors such as the initial conditions (position, velocity, and altitude) and gravitational forces acting on it. The object can follow different types of trajectories based on its velocity relative to Earth's gravitational pull. These trajectories include:</p>
 <ul>
-<li><strong>Newton’s Law of Gravitation:</strong> Governs the motion of objects under gravity.</li>
-<li><strong>Kepler’s Laws of Motion:</strong> Describe orbital shapes and motions.</li>
-<li><strong>Orbital Types</strong>:</li>
-<li><strong>Elliptical Orbit:</strong> The object stays in orbit around Earth.</li>
-<li><strong>Parabolic Trajectory:</strong> The object reaches escape velocity but does not return.</li>
-<li><strong>Hyperbolic Trajectory:</strong> The object completely escapes Earth’s gravity.</li>
+<li>
+<p><strong>Parabolic Trajectory</strong>: The object follows a curved path and will return to Earth after reaching a peak altitude. This happens when the object's velocity is less than the escape velocity but sufficient for a stable trajectory.</p>
+</li>
+<li>
+<p><strong>Elliptical Trajectory</strong>: A path that forms an ellipse, which is a closed loop. This trajectory occurs when the object's velocity is greater than that required for a circular orbit but less than the escape velocity.</p>
+</li>
+<li>
+<p><strong>Hyperbolic Trajectory</strong>: A path that escapes Earth's gravitational influence and never returns. This happens when the object's velocity is greater than the escape velocity, resulting in an unbounded path.</p>
+</li>
+</ul>
+<p>In this problem, we will analyze the potential trajectories of a payload released near Earth by considering the physics involved and simulating the trajectory based on various initial conditions.</p>
+<hr/>
+<h2 id="2-gravitational-forces-and-trajectory-equations">2. Gravitational Forces and Trajectory Equations</h2>
+<p>The motion of the payload near Earth is governed by Newton's Law of Gravitation, which states that the gravitational force between two objects is given by:</p>
+<div class="arithmatex">\[
+F = \frac{GMm}{r^2}
+\]</div>
+<p>Where:
+- <span class="arithmatex">\(G\)</span> is the gravitational constant (<span class="arithmatex">\(6.674 \times 10^{-11} \, \text{N m}^2/\text{kg}^2\)</span>),
+- <span class="arithmatex">\(M\)</span> is the mass of Earth (<span class="arithmatex">\(5.97 \times 10^{24} \, \text{kg}\)</span>),
+- <span class="arithmatex">\(m\)</span> is the mass of the payload,
+- <span class="arithmatex">\(r\)</span> is the distance from the center of Earth to the payload.</p>
+<p>The acceleration experienced by the payload is given by Newton's second law:</p>
+<div class="arithmatex">\[
+a = \frac{F}{m} = \frac{GM}{r^2}
+\]</div>
+<p>This acceleration is the gravitational acceleration, which will affect the trajectory of the payload.</p>
+<p>To model the motion of the payload, we can use the equations of motion under gravitational force. For simplicity, we can start by solving the system numerically using methods such as the <strong>Runge-Kutta</strong> method, which is widely used for solving ordinary differential equations (ODEs).</p>
+<p>The equations governing the position of the object at any time <span class="arithmatex">\(t\)</span> are:
+- Radial acceleration <span class="arithmatex">\(r'' = - \frac{GM}{r^2}\)</span>
+- Tangential acceleration <span class="arithmatex">\(\theta'' = 0\)</span> (assuming no initial angular momentum)</p>
+<p>Here, we use numerical methods to integrate these equations over time to simulate the path of the object.</p>
+<hr/>
+<h2 id="3-types-of-trajectories">3. Types of Trajectories</h2>
+<p>The specific trajectory of the payload will depend on its <strong>initial velocity</strong> and <strong>initial position</strong>. The three primary types of trajectories are:</p>
+<h3 id="a-parabolic-trajectory">a) <strong>Parabolic Trajectory</strong></h3>
+<p>A parabolic trajectory occurs when the velocity of the object is such that it escapes the Earth's atmosphere but will eventually return to Earth. This happens when the object’s initial velocity is less than the escape velocity but sufficient to reach a high altitude. </p>
+<ul>
+<li>The trajectory is characterized by a point where the object reaches its maximum height (the apex), after which it will fall back toward Earth.</li>
+</ul>
+<h3 id="b-elliptical-trajectory">b) <strong>Elliptical Trajectory</strong></h3>
+<p>In an elliptical trajectory, the object’s velocity is greater than the velocity for a circular orbit but less than the escape velocity. The object follows a path that brings it back to Earth but with an elliptical shape. </p>
+<ul>
+<li>In this case, the object’s path is a closed orbit that can repeat, similar to the motion of satellites in orbit around Earth.</li>
+</ul>
+<h3 id="c-hyperbolic-trajectory">c) <strong>Hyperbolic Trajectory</strong></h3>
+<p>A hyperbolic trajectory occurs when the object’s velocity exceeds the escape velocity. This results in a path that escapes Earth's gravitational field and never returns.</p>
+<ul>
+<li>This trajectory is unbounded and would represent the case for a payload released at high speed, such as a spacecraft traveling to other planets or even interstellar space.</li>
 </ul>
 <hr/>
-<h2 id="mathematical-foundation"><strong>Mathematical Foundation</strong></h2>
-<h3 id="equations-of-motion"><strong>Equations of Motion</strong></h3>
-<p>Newton’s Second Law and the gravitational force equation:
-$$ F = m a = - \frac{G M m}{r^2} $$</p>
-<p>Acceleration in radial coordinates:
-$$ \frac{d^2 r}{dt^2} = - \frac{G M}{r^2} $$</p>
-<p>Using numerical integration, we compute <strong>position and velocity over time</strong>.</p>
-<p><img alt="alt text" src="../image-4.png"/></p>
+<h2 id="4-numerical-analysis-and-simulation">4. Numerical Analysis and Simulation</h2>
+<h3 id="a-initial-conditions">a) Initial Conditions</h3>
+<p>For the simulation, we will consider the following initial conditions for the payload:
+- Initial position: <span class="arithmatex">\(r_0\)</span> (distance from Earth's center),
+- Initial velocity: <span class="arithmatex">\(v_0\)</span> (speed at the moment of release),
+- Initial direction: The initial velocity will be at some angle relative to the Earth's surface, influencing the trajectory.</p>
+<p>The objective is to calculate the path of the payload based on these initial conditions.</p>
+<h3 id="b-numerical-methods">b) Numerical Methods</h3>
+<p>To simulate the trajectory, we will employ numerical methods to solve the system of equations describing the motion. Specifically, we can use the <strong>Runge-Kutta method</strong>, which is commonly used for solving ordinary differential equations.</p>
+<p>The basic steps involved are:
+1. Define the initial position and velocity of the payload.
+2. Use the Runge-Kutta method to numerically integrate the equations of motion over a set period.
+3. Plot the trajectory based on the computed position at each time step.</p>
+<hr/>
+<h2 id="5-space-mission-scenarios-orbital-insertion-reentry-and-escape">5. Space Mission Scenarios: Orbital Insertion, Reentry, and Escape</h2>
+<h3 id="a-orbital-insertion">a) <strong>Orbital Insertion</strong></h3>
+<p>In space mission planning, <strong>orbital insertion</strong> refers to the process of placing a payload into orbit around Earth. For successful orbital insertion, the payload must achieve a <strong>circular orbit</strong>. This requires a precise velocity and direction, which can be modeled as an elliptical trajectory where the periapsis (closest point to Earth) coincides with the radius of the desired orbit.</p>
+<h3 id="b-reentry">b) <strong>Reentry</strong></h3>
+<p>Payloads that reenter Earth's atmosphere must follow a specific trajectory that accounts for drag, gravitational forces, and atmospheric conditions. The trajectory will likely be parabolic or elliptical, depending on the initial velocity and altitude.</p>
+<h3 id="c-escape">c) <strong>Escape</strong></h3>
+<p>Escape velocity is the speed required to leave Earth's gravitational influence. A payload launched at or above the escape velocity will follow a <strong>hyperbolic trajectory</strong> and never return to Earth. This is typically the case for interplanetary missions, such as missions to Mars, the Moon, or beyond.</p>
+<hr/>
+<h2 id="6-computational-tool-simulation-and-visualization">6. Computational Tool: Simulation and Visualization</h2>
+<p>The next step is to develop a computational tool to simulate and visualize the motion of a payload under Earth's gravity. This tool will take into account:
+- <strong>Initial position</strong> and <strong>velocity</strong> of the payload,
+- Gravitational forces acting on the payload,
+- Numerical integration of the equations of motion,
+- Graphical representation of the trajectory.</p>
+<hr/>
+<h2 id="7-deliverables">7. Deliverables</h2>
+<ol>
+<li><strong>Markdown Document</strong>: This document explaining the principles, mathematical formulations, and potential trajectories near Earth.</li>
+<li><strong>Python Script or Jupyter Notebook</strong>: A code that simulates the motion of the payload under different conditions and visualizes the results.</li>
+<li><strong>Graphical Representation</strong>: Plots showing the trajectories of the payload based on different initial conditions, such as elliptical, parabolic, and hyperbolic trajectories.</li>
+</ol>
+<hr/>
+<h2 id="8-conclusion">8. Conclusion</h2>
+<p>Understanding the trajectories of a payload released near Earth is essential for space mission planning. Whether deploying satellites, planning reentry, or escaping Earth's gravity, the ability to calculate and predict the path of the payload allows mission planners to optimize fuel usage, trajectory accuracy, and mission success</p>
+<p>Collab link https://colab.research.google.com/drive/12s4KS2CILXeiVTQqJRjCw6iNPIQpSL_9</p>
+<p><img alt="alt text" src="../image-8.png"/></p>
+<h4 id="2-radial-distance-vs-time">2. <strong>Radial Distance vs Time:</strong></h4>
+<p>In this second visualization, we observe the <strong>radial distance</strong> of the payload from Earth's center over time. Key features of the plot include:</p>
+<ul>
+<li><strong>X-Axis (Time in Seconds):</strong> The X-axis represents the time (in seconds) that has passed since the payload was released. This helps track how the payload's position changes with time.</li>
+<li><strong>Y-Axis (Radial Distance in Kilometers):</strong> The Y-axis shows the radial distance, measured in kilometers, between the payload and the Earth's center. Initially, the distance corresponds to the payload's starting altitude (100 km above Earth's surface).</li>
+<li><strong>Distance Evolution:</strong> The plot illustrates how the radial distance increases over time as the payload is influenced by Earth's gravity. As the payload initially moves away from Earth, it is gradually decelerated by the gravitational pull of the Earth, and the rate of increase in distance decreases over time.</li>
+</ul>
+<p>This plot provides insight into the payload's motion under Earth's gravity. It helps visualize the changing dynamics of the payload as it moves farther from Earth, allowing us to understand the <strong>payload's escape potential</strong> and how gravitational forces affect its motion.</p>
+<p><img alt="alt text" src="../image-9.png"/></p>
+<h1 id="orbital-trajectories-visualization">Orbital Trajectories Visualization</h1>
+<p>This image displays three different types of trajectories that an object can take under the influence of Earth's gravity. The plots illustrate:</p>
+<ol>
+<li><strong>Elliptical Trajectory</strong> </li>
+<li>The object is in a bound orbit around the Earth.  </li>
+<li>
+<p>Velocity is less than escape velocity.  </p>
+</li>
+<li>
+<p><strong>Parabolic Trajectory (Escape Velocity)</strong> </p>
+</li>
+<li>The object is moving at exactly the escape velocity.  </li>
+<li>
+<p>This represents a marginally unbound orbit.  </p>
+</li>
+<li>
+<p><strong>Hyperbolic Trajectory (Escape Velocity + Extra)</strong> </p>
+</li>
+<li>The object moves faster than escape velocity.  </li>
+<li>It follows a hyperbolic path, escaping Earth's gravity permanently.  </li>
+</ol>
+<h3 id="elements-of-the-plot">Elements of the Plot:</h3>
+<ul>
+<li><strong>X-Axis:</strong> Represents the horizontal position (meters).  </li>
+<li><strong>Y-Axis:</strong> Represents the vertical position (meters).  </li>
+<li><strong>Legend:</strong></li>
+<li><strong>Elliptical Trajectory / Parabolic Trajectory / Hyperbolic Trajectory:</strong> Shows the path of the object.</li>
+<li><strong>Earth:</strong> Marked as a red 'X' to indicate the central gravitational body.</li>
+</ul>
+<p>Each subplot demonstrates how varying initial velocities affect the shape of the trajectory.</p>
 </div>
 </div><footer>
 <div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">
