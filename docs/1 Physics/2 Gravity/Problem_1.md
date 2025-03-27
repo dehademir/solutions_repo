@@ -74,7 +74,7 @@ where $a$ is the average of the perihelion and aphelion distances. This law help
 
 Kepler’s Third Law provides a fundamental link between orbital mechanics and gravitational forces. By implementing computational simulations, we verify that $T^2$ is indeed proportional to $r^3$, confirming its validity in both theoretical and real-world scenarios.
 
-Collab link: https://colab.research.google.com/drive/1MS_gOcNBZMEoS0KIUzI9aBXFoH75FxZu
+Collab link https://colab.research.google.com/drive/1MS_gOcNBZMEoS0KIUzI9aBXFoH75FxZu
 
 ![alt text](image-1.png)
 
