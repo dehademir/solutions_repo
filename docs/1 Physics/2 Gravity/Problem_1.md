@@ -74,6 +74,8 @@ where $a$ is the average of the perihelion and aphelion distances. This law help
 
 Kepler’s Third Law provides a fundamental link between orbital mechanics and gravitational forces. By implementing computational simulations, we verify that $T^2$ is indeed proportional to $r^3$, confirming its validity in both theoretical and real-world scenarios.
 
+Collab link: https://colab.research.google.com/drive/1MS_gOcNBZMEoS0KIUzI9aBXFoH75FxZu
+
 ![alt text](image-1.png)
 
 # **Visualization of Kepler’s Third Law and Circular Orbits**
@@ -94,8 +96,6 @@ As you can see from the plot, the data points align closely with the theoretical
 This plot visually demonstrates that the orbital period squared is directly proportional to the orbital radius cubed. It serves as a direct validation of Kepler’s Third Law using real-world planetary data.
 
 ---
-
-Collab link: https://colab.research.google.com/drive/1MS_gOcNBZMEoS0KIUzI9aBXFoH75FxZu
 
 ## **2. Visualization of Circular Orbits**
 
