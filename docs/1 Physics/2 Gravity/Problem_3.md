@@ -1,4 +1,4 @@
-# Trajectories of a Freely Released Payload Near Earth
+# Problem 3
 
 ## 1. Introduction to Trajectories Near Earth
 
