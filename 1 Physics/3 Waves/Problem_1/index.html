@@ -172,6 +172,164 @@
 <div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
 <div class="section" itemprop="articleBody">
 <h1 id="problem-1">Problem 1</h1>
+<h1 id="interference-patterns-on-a-water-surface">Interference Patterns on a Water Surface</h1>
+<h2 id="motivation">Motivation:</h2>
+<p>Interference is a fundamental phenomenon in wave mechanics, where waves from different sources overlap and combine to form new patterns. On a water surface, this can be readily observed when ripples from different points meet, leading to the formation of interference patterns. These patterns can demonstrate various interactions, including constructive interference (wave reinforcement) and destructive interference (wave cancellation).</p>
+<p>Understanding these interference patterns helps us gain insights into wave behavior in a simple, visual manner. This is essential for grasping the principles of wave superposition and how multiple waves interact. Moreover, it offers an engaging and practical approach to exploring wave dynamics, which has applications in various real-world scenarios, such as acoustics, optics, and fluid dynamics.</p>
+<h2 id="task">Task:</h2>
+<p>The goal of this task is to analyze the interference patterns that arise when waves are emitted from multiple point sources placed at the vertices of a regular polygon. Each point source emits a circular wave described by the Single Disturbance equation:</p>
+<div class="arithmatex">\[
+\eta(x, y, t) = \frac{A}{\sqrt{r}} \cdot \cos(k r - \omega t + \phi)
+\]</div>
+<p>Where:
+- <span class="arithmatex">\(\eta(x, y, t)\)</span> represents the displacement of the water surface at point <span class="arithmatex">\((x, y)\)</span> at time <span class="arithmatex">\(t\)</span>.
+- <span class="arithmatex">\(A\)</span> is the amplitude of the wave.
+- <span class="arithmatex">\(k = \frac{2\pi}{\lambda}\)</span> is the wave number, which is related to the wavelength <span class="arithmatex">\(\lambda\)</span>.
+- <span class="arithmatex">\(\omega = 2\pi f\)</span> is the angular frequency, related to the frequency <span class="arithmatex">\(f\)</span> of the wave.
+- <span class="arithmatex">\(r = \sqrt{(x - x_0)^2 + (y - y_0)^2}\)</span> is the distance between the source located at <span class="arithmatex">\((x_0, y_0)\)</span> and the observation point <span class="arithmatex">\((x, y)\)</span>.
+- <span class="arithmatex">\(\phi\)</span> is the initial phase of the wave.</p>
+<h2 id="problem-statement">Problem Statement:</h2>
+<p>We are tasked with studying the interference patterns formed on a water surface when multiple point sources of waves are placed at the vertices of a regular polygon (e.g., an equilateral triangle, square, regular pentagon, etc.). The objective is to:
+1. Set up the wave equations for each source.
+2. Apply the principle of superposition by summing the displacements from all sources.
+3. Analyze the resulting interference patterns to identify regions of constructive and destructive interference.</p>
+<h3 id="steps-to-follow">Steps to Follow:</h3>
+<h4 id="1-select-a-regular-polygon">1. <strong>Select a Regular Polygon</strong>:</h4>
+<p>The first step is to choose a regular polygon. Common choices include:
+   - <strong>Equilateral triangle</strong> (3 vertices),
+   - <strong>Square</strong> (4 vertices),
+   - <strong>Regular pentagon</strong> (5 vertices), and so on.</p>
+<p>Each polygon has a specific number of vertices, which will determine the number of point sources from which the waves emanate.</p>
+<h4 id="2-position-the-sources">2. <strong>Position the Sources</strong>:</h4>
+<p>The sources are placed at the vertices of the selected polygon. In polar coordinates, the vertices are evenly distributed on a circle. The angle between consecutive sources can be calculated as:</p>
+<p>$$ \theta_i = \frac{2\pi i}{N} \quad \text{for} \quad i = 0, 1, \dots, N-1 $$</p>
+<p>Where <span class="arithmatex">\(N\)</span> is the number of sources (or the number of vertices of the polygon). The positions of the sources are then:</p>
+<p>$$ x_i = R \cos(\theta_i) $$
+   $$ y_i = R \sin(\theta_i) $$</p>
+<p>Where <span class="arithmatex">\(R\)</span> is the radius of the circle inscribed around the polygon.</p>
+<h4 id="3-write-the-wave-equations">3. <strong>Write the Wave Equations</strong>:</h4>
+<p>Each source emits a wave described by the equation:</p>
+<p>$$ \eta_i(x, y, t) = \frac{A}{\sqrt{r_i}} \cdot \cos(k r_i - \omega t + \phi) $$</p>
+<p>Where <span class="arithmatex">\(r_i\)</span> is the distance from the source at <span class="arithmatex">\((x_i, y_i)\)</span> to the point <span class="arithmatex">\((x, y)\)</span>:</p>
+<p>$$ r_i = \sqrt{(x - x_i)^2 + (y - y_i)^2} $$</p>
+<h4 id="4-superposition-of-waves">4. <strong>Superposition of Waves</strong>:</h4>
+<p>The total displacement at any point <span class="arithmatex">\((x, y)\)</span> on the water surface is the sum of the displacements caused by all the sources. According to the principle of superposition:</p>
+<p>$$ \eta_{\text{sum}}(x, y, t) = \sum_{i=1}^{N} \eta_i(x, y, t) $$</p>
+<p>The total displacement results from adding the contributions from all sources. Depending on the relative phases of the waves from the sources, we may observe regions of constructive interference (where the waves reinforce each other) or destructive interference (where the waves cancel each other out).</p>
+<h4 id="5-analyze-interference-patterns">5. <strong>Analyze Interference Patterns</strong>:</h4>
+<p>The interference patterns can be visualized by plotting the total displacement <span class="arithmatex">\(\eta_{\text{sum}}(x, y, t)\)</span> at various points on the water surface. Regions of constructive interference will show up as areas of high displacement, while regions of destructive interference will show low or zero displacement.</p>
+<p>By examining the patterns for different polygons, we can observe how the symmetry and number of sources affect the interference.</p>
+<p>Colab Visualizations: https://colab.research.google.com/drive/1GeyAPchrlodXF4B5WXIblvuSDmE1Q2FH</p>
+<p><img alt="alt text" src="../image-1.png"/></p>
+<h1 id="explanation-of-the-interference-pattern-visualization">Explanation of the Interference Pattern Visualization</h1>
+<p>The code provided simulates and visualizes the interference patterns created by waves emitted from point sources placed at the vertices of a regular polygon (in this case, an equilateral triangle with 3 sources). The goal of the visualization is to show how the superposition of waves from multiple sources creates a complex interference pattern on a water surface.</p>
+<h3 id="visualization-overview">Visualization Overview:</h3>
+<p>The plot generated by the code is a <strong>contour plot</strong> that represents the displacement of the water surface at each point on the grid. The color intensity in the plot corresponds to the displacement of the water surface at that point, with warmer colors (like red) representing regions of higher displacement (constructive interference), and cooler colors (like blue) representing regions of lower displacement (destructive interference).</p>
+<h3 id="key-features-of-the-visualization">Key Features of the Visualization:</h3>
+<ol>
+<li><strong>Grid Representation</strong>:</li>
+<li>The water surface is modeled as a 2D grid of points in the <span class="arithmatex">\(x\)</span> and <span class="arithmatex">\(y\)</span> directions. This grid is created using <code>np.meshgrid</code>, which generates a grid of points from the <span class="arithmatex">\(x\)</span> and <span class="arithmatex">\(y\)</span> ranges defined earlier.</li>
+<li>
+<p>The grid spans from <code>-size</code> to <code>size</code> in both the <span class="arithmatex">\(x\)</span> and <span class="arithmatex">\(y\)</span> directions, giving a 2D plane on which the wave displacements are calculated.</p>
+</li>
+<li>
+<p><strong>Source Placement</strong>:</p>
+</li>
+<li>The point sources (located at the vertices of a regular polygon) are positioned on a circle with a radius of 3 units. For an equilateral triangle, the vertices are placed at 120-degree intervals around this circle.</li>
+<li>
+<p>The positions of the sources are calculated using the <code>cos</code> and <code>sin</code> functions based on the angle <code>theta</code>, which is evenly spaced between the sources.</p>
+</li>
+<li>
+<p><strong>Wave Displacement Calculation</strong>:</p>
+</li>
+<li>For each point on the grid, the displacement is calculated by summing the contributions from each point source using the formula:</li>
+</ol>
+<p>$$
+   \eta_i(x, y, t) = \frac{A}{\sqrt{r}} \cdot \cos(k r - \omega t + \phi)
+   $$</p>
+<p>Where:
+   - <span class="arithmatex">\(r\)</span> is the distance from the source to the grid point <span class="arithmatex">\((x, y)\)</span>.
+   - <span class="arithmatex">\(A\)</span> is the amplitude of the wave, <span class="arithmatex">\(\lambda\)</span> is the wavelength, <span class="arithmatex">\(f\)</span> is the frequency, and <span class="arithmatex">\(\phi\)</span> is the phase.</p>
+<p>The total displacement <span class="arithmatex">\(\eta_{\text{sum}}(x, y, t)\)</span> is the sum of the displacements from all sources.</p>
+<ol>
+<li><strong>Interference Pattern</strong>:</li>
+<li>The interference pattern shows regions where the waves from the different sources interact. Areas of <strong>constructive interference</strong> occur where the waves reinforce each other, leading to higher displacement values (depicted as warmer colors in the plot).</li>
+<li>
+<p>Conversely, areas of <strong>destructive interference</strong> occur where the waves cancel each other out, leading to lower displacement values (depicted as cooler colors in the plot).</p>
+</li>
+<li>
+<p><strong>Color Map</strong>:</p>
+</li>
+<li>The <code>contourf</code> function is used to create filled contour plots, which show the intensity of the displacement. The <code>RdBu</code> colormap is used to represent the positive and negative displacements, with red indicating higher displacement (constructive interference) and blue indicating lower displacement (destructive interference).</li>
+<li>
+<p>A color bar is included to help interpret the displacement values, with higher values corresponding to regions of constructive interference.</p>
+</li>
+<li>
+<p><strong>Title and Axes</strong>:</p>
+</li>
+<li>The plot title indicates the number of sources used in the simulation (in this case, 3 sources, corresponding to an equilateral triangle).</li>
+<li>The axes represent the <span class="arithmatex">\(x\)</span> and <span class="arithmatex">\(y\)</span> coordinates on the water surface. The plot is scaled to ensure the axes have equal lengths, meaning the aspect ratio of the plot is kept consistent (<code>plt.axis("equal")</code>).</li>
+</ol>
+<h3 id="observations">Observations:</h3>
+<ul>
+<li>In the case of the <strong>equilateral triangle</strong> (3 sources), the plot shows a <strong>symmetrical interference pattern</strong>. The central region of the plot likely exhibits <strong>constructive interference</strong> with high displacement, while areas further from the center show alternating regions of constructive and destructive interference.</li>
+<li>The <strong>symmetry of the polygon</strong> influences the shape and spacing of the interference fringes. For example, for 3 sources, the pattern will have rotational symmetry around the center of the polygon.</li>
+<li>As the number of sources (vertices of the polygon) increases, the interference pattern will become more complex and may show finer fringes of constructive and destructive interference.</li>
+</ul>
+<h3 id="conclusion">Conclusion:</h3>
+<p>This visualization helps to illustrate the principles of wave superposition and interference. By analyzing the interference pattern, we can gain insights into how multiple coherent wave sources interact and how their positions affect the resulting pattern of constructive and destructive interference.</p>
+<p><img alt="alt text" src="../image-2.png"/></p>
+<h1 id="explanation-of-the-interference-pattern-for-a-square-configuration">Explanation of the Interference Pattern for a Square Configuration</h1>
+<p>The generated plot represents the interference pattern created by waves emitted from four point sources placed at the vertices of a square. Similar to the previous simulation with an equilateral triangle, the goal here is to visualize how the superposition of waves from multiple sources creates regions of constructive and destructive interference.</p>
+<h3 id="visualization-overview_1">Visualization Overview:</h3>
+<p>The plot is a <strong>contour plot</strong> that shows the displacement of the water surface at each point on the grid. The intensity of the color corresponds to the displacement, with warmer colors (like red) representing higher displacement (constructive interference), and cooler colors (like blue) representing lower displacement (destructive interference).</p>
+<h3 id="key-features-of-the-visualization_1">Key Features of the Visualization:</h3>
+<ol>
+<li><strong>Source Placement</strong>:</li>
+<li>
+<p>The point sources are positioned at the vertices of a <strong>square</strong>. The coordinates of the four sources are at <span class="arithmatex">\((x_1, y_1) = (-3, 3)\)</span>, <span class="arithmatex">\((x_2, y_2) = (3, 3)\)</span>, <span class="arithmatex">\((x_3, y_3) = (3, -3)\)</span>, and <span class="arithmatex">\((x_4, y_4) = (-3, -3)\)</span>. These points are evenly spaced at 90-degree intervals.</p>
+</li>
+<li>
+<p><strong>Grid Representation</strong>:</p>
+</li>
+<li>
+<p>The grid spans from <code>-size</code> to <code>size</code> in both <span class="arithmatex">\(x\)</span> and <span class="arithmatex">\(y\)</span> directions, creating a 2D plane that represents the water surface. The displacement at each point on the grid is calculated based on the superposition of waves from the four sources.</p>
+</li>
+<li>
+<p><strong>Wave Displacement Calculation</strong>:</p>
+</li>
+<li>The displacement at each point <span class="arithmatex">\((x, y)\)</span> is calculated by summing the contributions of the four sources using the wave formula:</li>
+</ol>
+<p>$$
+   \eta_i(x, y, t) = \frac{A}{\sqrt{r}} \cdot \cos(k r - \omega t + \phi)
+   $$</p>
+<p>Where <span class="arithmatex">\(r\)</span> is the distance between the source at <span class="arithmatex">\((x_i, y_i)\)</span> and the observation point <span class="arithmatex">\((x, y)\)</span>, and <span class="arithmatex">\(A\)</span> is the amplitude of the wave.</p>
+<ol>
+<li><strong>Interference Pattern</strong>:</li>
+<li>The resulting interference pattern exhibits regions of <strong>constructive interference</strong>, where the waves from multiple sources reinforce each other, and <strong>destructive interference</strong>, where the waves cancel each other out.</li>
+<li>
+<p>The plot shows alternating regions of higher and lower displacement, with constructive interference leading to higher displacement (shown in warmer colors) and destructive interference leading to lower displacement (shown in cooler colors).</p>
+</li>
+<li>
+<p><strong>Color Map</strong>:</p>
+</li>
+<li>The <code>contourf</code> function is used to create filled contours, which display the intensity of the displacement. The <code>RdBu</code> colormap is used, with red colors indicating high displacement (constructive interference) and blue colors indicating low displacement (destructive interference).</li>
+<li>
+<p>A color bar is included to indicate the displacement values corresponding to different colors.</p>
+</li>
+<li>
+<p><strong>Symmetry</strong>:</p>
+</li>
+<li>The square configuration introduces <strong>fourfold symmetry</strong> in the interference pattern. The pattern is symmetric around the center of the square, with alternating regions of constructive and destructive interference appearing in each quadrant.</li>
+</ol>
+<h3 id="observations_1">Observations:</h3>
+<ul>
+<li>The interference pattern generated by the four sources placed at the vertices of a square shows clear <strong>symmetry</strong>. This symmetry is a result of the equal spacing between the sources and their arrangement at 90-degree intervals.</li>
+<li><strong>Constructive interference</strong> occurs near the center of the square, where the waves from the sources meet in-phase and reinforce each other, leading to higher displacement.</li>
+<li><strong>Destructive interference</strong> occurs at other regions, where the waves from different sources meet out-of-phase and cancel each other out, leading to lower displacement.</li>
+</ul>
+<h3 id="conclusion_1">Conclusion:</h3>
+<p>This visualization demonstrates the principles of wave superposition and interference using a square configuration of sources. By examining the interference pattern, we can see how the positions of the sources affect the regions of constructive and destructive interference. The symmetrical arrangement of the sources creates a visually interesting and well-defined pattern of interference, which can be analyzed to better understand wave interactions in various fields of physics.</p>
 </div>
 </div><footer>
 <div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">
