@@ -130,6 +130,55 @@ A **Poincaré section** is a technique used in dynamical systems analysis to stu
 ## Conclusion
 The Poincaré section provides insights into the dynamical nature of the forced damped pendulum. The observed pattern suggests that the system is likely in a periodic regime, with possible indications of complex dynamics in the form of outliers.
 
+![alt text](image-10.png)
+
+# Explanation of the Simple Pendulum Motion (Undamped)
+
+## Overview:
+The following plot represents the motion of an **undamped simple pendulum**, where the system undergoes **simple harmonic motion**. In this system, there is no damping or external forcing, meaning the pendulum will oscillate indefinitely without any reduction in amplitude. The motion is purely governed by the force of gravity.
+
+## Mathematical Model:
+The motion of an undamped simple pendulum is governed by the equation:
+$$
+\frac{d^2\theta}{dt^2} + \frac{g}{L} \sin(\theta) = 0
+$$
+Where:
+- $\theta$ = Angular displacement (in radians),
+- $g$ = Gravitational acceleration ($9.81 \, m/s^2$),
+- $L$ = Length of the pendulum.
+
+This equation is derived from the Newtonian mechanics of the pendulum and describes how the angular displacement of the pendulum changes over time.
+
+For small oscillations, the equation simplifies to simple harmonic motion, but for large angles, the equation remains nonlinear.
+
+## Key Parameters:
+- $\theta_0 = \frac{\pi}{4}$ (Initial angle: 45 degrees),
+- $\omega_0 = 0$ (Initial angular velocity: 0),
+- $L = 1.0$ (Length of the pendulum in meters),
+- $g = 9.81$ (Acceleration due to gravity).
+
+## Plot Description:
+The plot shows the time evolution of:
+- **Angular displacement** ($\theta(t)$) in **orange**: This represents the position of the pendulum at each time.
+- **Angular velocity** ($\omega(t)$) in **red dashed lines**: This represents the speed at which the pendulum is moving at each point in time.
+
+### Observations:
+- The **angular displacement** oscillates in a sinusoidal pattern, characteristic of simple harmonic motion, with a constant amplitude and frequency.
+- The **angular velocity** leads the displacement by 90 degrees (a characteristic feature of harmonic oscillators), and its magnitude is maximum when the pendulum is passing through the equilibrium position.
+- Since the pendulum is undamped, the oscillations continue indefinitely with constant amplitude.
+
+### Key Takeaways:
+1. **Harmonic Motion**: The pendulum follows simple harmonic motion, meaning the angular displacement oscillates sinusoidally with a fixed period.
+2. **Energy Conservation**: In an undamped system, no energy is lost to friction or resistance, so the amplitude of the oscillations remains constant over time.
+3. **Phase Relationship**: The angular velocity leads the angular displacement by 90 degrees, indicating that the motion is out of phase with the position.
+4. **Application**: This model is a good approximation for small-angle oscillations of pendulums and is used in simple physics demonstrations of harmonic motion.
+
+## Conclusion:
+The plot demonstrates the periodic, undamped motion of a pendulum where the displacement and velocity follow sinusoidal patterns over time. The simple harmonic motion is a fundamental concept in physics and engineering, and this model can be applied to a variety of systems experiencing similar oscillatory behavior.
+
+This type of system is useful for understanding basic principles of mechanics, such as oscillation frequency, phase relationships, and energy conservation in idealized conditions.
+
+
 ![alt text](image-7.png)
 
 ## Phase Space Diagrams
