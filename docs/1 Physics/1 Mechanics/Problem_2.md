@@ -129,3 +129,30 @@ A **Poincaré section** is a technique used in dynamical systems analysis to stu
 
 ## Conclusion
 The Poincaré section provides insights into the dynamical nature of the forced damped pendulum. The observed pattern suggests that the system is likely in a periodic regime, with possible indications of complex dynamics in the form of outliers.
+
+![alt text](image-7.png)
+
+## Phase Space Diagrams
+
+### **1️⃣ Simple Pendulum with $b = 0$ and $A = 0$**
+
+The **simple pendulum** is a classic example of a nonlinear dynamical system. When there is no damping ($b = 0$) and no external forcing ($A = 0$), the pendulum's motion is purely governed by gravity. The phase space diagram shows how the pendulum's angular position $\theta$ and angular velocity $\omega$ evolve over time.
+
+#### Phase Space Characteristics:
+- **Closed Orbits**: In the absence of damping and forcing, the phase space trajectory of the simple pendulum is **closed**, indicating periodic motion.
+- **Conservation of Energy**: The total energy (kinetic + potential) remains constant, as there is no energy loss or input.
+
+### **2️⃣ Forced Pendulum with $b = 0$ and $A \neq 0$**
+
+When the pendulum is driven by an external periodic force (i.e., $A \neq 0$), the system exhibits forced oscillations. The driving frequency $\omega$ and amplitude $A$ determine the behavior of the system.
+
+#### Phase Space Characteristics:
+- **Non-Closed Orbits**: In the forced system, the phase space trajectory is no longer closed because the external force constantly adds energy into the system.
+- **Resonance**: If the frequency of the external force matches the pendulum’s natural frequency, the amplitude of oscillations can increase significantly, leading to resonance.
+
+### Comparison of Phase Space:
+- The **simple pendulum** shows periodic motion with closed orbits, while the **forced pendulum** demonstrates a more complex pattern due to the external driving force.
+- The forced pendulum can exhibit **resonance** when the driving frequency aligns with the system's natural frequency, as seen in the expanded phase space trajectory.
+
+## Conclusion on Phase Space:
+Phase space diagrams help to visualize the dynamics of the pendulum, allowing us to distinguish between periodic, quasiperiodic, and chaotic behaviors, and understand the impact of damping and forcing on the system.
