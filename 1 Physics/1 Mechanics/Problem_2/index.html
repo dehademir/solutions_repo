@@ -291,6 +291,48 @@ where:<br/>
 </ul>
 <h2 id="conclusion">Conclusion</h2>
 <p>The Poincaré section provides insights into the dynamical nature of the forced damped pendulum. The observed pattern suggests that the system is likely in a periodic regime, with possible indications of complex dynamics in the form of outliers.</p>
+<p><img alt="alt text" src="../image-10.png"/></p>
+<h1 id="explanation-of-the-simple-pendulum-motion-undamped">Explanation of the Simple Pendulum Motion (Undamped)</h1>
+<h2 id="overview">Overview:</h2>
+<p>The following plot represents the motion of an <strong>undamped simple pendulum</strong>, where the system undergoes <strong>simple harmonic motion</strong>. In this system, there is no damping or external forcing, meaning the pendulum will oscillate indefinitely without any reduction in amplitude. The motion is purely governed by the force of gravity.</p>
+<h2 id="mathematical-model">Mathematical Model:</h2>
+<p>The motion of an undamped simple pendulum is governed by the equation:
+$$
+\frac{d^2\theta}{dt^2} + \frac{g}{L} \sin(\theta) = 0
+$$
+Where:
+- <span class="arithmatex">\(\theta\)</span> = Angular displacement (in radians),
+- <span class="arithmatex">\(g\)</span> = Gravitational acceleration (<span class="arithmatex">\(9.81 \, m/s^2\)</span>),
+- <span class="arithmatex">\(L\)</span> = Length of the pendulum.</p>
+<p>This equation is derived from the Newtonian mechanics of the pendulum and describes how the angular displacement of the pendulum changes over time.</p>
+<p>For small oscillations, the equation simplifies to simple harmonic motion, but for large angles, the equation remains nonlinear.</p>
+<h2 id="key-parameters">Key Parameters:</h2>
+<ul>
+<li><span class="arithmatex">\(\theta_0 = \frac{\pi}{4}\)</span> (Initial angle: 45 degrees),</li>
+<li><span class="arithmatex">\(\omega_0 = 0\)</span> (Initial angular velocity: 0),</li>
+<li><span class="arithmatex">\(L = 1.0\)</span> (Length of the pendulum in meters),</li>
+<li><span class="arithmatex">\(g = 9.81\)</span> (Acceleration due to gravity).</li>
+</ul>
+<h2 id="plot-description">Plot Description:</h2>
+<p>The plot shows the time evolution of:
+- <strong>Angular displacement</strong> (<span class="arithmatex">\(\theta(t)\)</span>) in <strong>orange</strong>: This represents the position of the pendulum at each time.
+- <strong>Angular velocity</strong> (<span class="arithmatex">\(\omega(t)\)</span>) in <strong>red dashed lines</strong>: This represents the speed at which the pendulum is moving at each point in time.</p>
+<h3 id="observations_2">Observations:</h3>
+<ul>
+<li>The <strong>angular displacement</strong> oscillates in a sinusoidal pattern, characteristic of simple harmonic motion, with a constant amplitude and frequency.</li>
+<li>The <strong>angular velocity</strong> leads the displacement by 90 degrees (a characteristic feature of harmonic oscillators), and its magnitude is maximum when the pendulum is passing through the equilibrium position.</li>
+<li>Since the pendulum is undamped, the oscillations continue indefinitely with constant amplitude.</li>
+</ul>
+<h3 id="key-takeaways_2">Key Takeaways:</h3>
+<ol>
+<li><strong>Harmonic Motion</strong>: The pendulum follows simple harmonic motion, meaning the angular displacement oscillates sinusoidally with a fixed period.</li>
+<li><strong>Energy Conservation</strong>: In an undamped system, no energy is lost to friction or resistance, so the amplitude of the oscillations remains constant over time.</li>
+<li><strong>Phase Relationship</strong>: The angular velocity leads the angular displacement by 90 degrees, indicating that the motion is out of phase with the position.</li>
+<li><strong>Application</strong>: This model is a good approximation for small-angle oscillations of pendulums and is used in simple physics demonstrations of harmonic motion.</li>
+</ol>
+<h2 id="conclusion_1">Conclusion:</h2>
+<p>The plot demonstrates the periodic, undamped motion of a pendulum where the displacement and velocity follow sinusoidal patterns over time. The simple harmonic motion is a fundamental concept in physics and engineering, and this model can be applied to a variety of systems experiencing similar oscillatory behavior.</p>
+<p>This type of system is useful for understanding basic principles of mechanics, such as oscillation frequency, phase relationships, and energy conservation in idealized conditions.</p>
 <p><img alt="alt text" src="../image-7.png"/></p>
 <h2 id="phase-space-diagrams">Phase Space Diagrams</h2>
 <h3 id="1-simple-pendulum-with-b-0-and-a-0"><strong>1️⃣ Simple Pendulum with <span class="arithmatex">\(b = 0\)</span> and <span class="arithmatex">\(A = 0\)</span></strong></h3>
@@ -322,13 +364,13 @@ where:<br/>
 <p>This plot represents the phase space of a <strong>damped pendulum</strong> system where there is <strong>no external forcing</strong>. The system experiences <strong>damping</strong>, which reduces the amplitude of oscillations over time. The variables plotted are:
 - <strong>X-axis</strong>: Angular displacement (<span class="arithmatex">\(\theta\)</span>), the position of the pendulum.
 - <strong>Y-axis</strong>: Angular velocity (<span class="arithmatex">\(\omega\)</span>), the speed at which the pendulum is moving.</p>
-<h3 id="observations_2">Observations:</h3>
+<h3 id="observations_3">Observations:</h3>
 <ul>
 <li>The trajectory forms a <strong>spiral</strong> that moves inward toward the origin. This indicates that the pendulum's oscillations are decaying due to <strong>damping</strong>.</li>
 <li>As the system evolves, the amplitude of the oscillations <strong>gradually decreases</strong>, eventually leading to zero displacement and velocity at the center (the origin), which signifies the system coming to rest.</li>
 <li>The system exhibits <strong>damped harmonic motion</strong>, where energy is dissipated over time due to friction or resistance, which is why the spiral path decays.</li>
 </ul>
-<h3 id="key-takeaways_2">Key Takeaways:</h3>
+<h3 id="key-takeaways_3">Key Takeaways:</h3>
 <ul>
 <li>The damping causes the <strong>energy of the system to dissipate</strong> over time, reducing the amplitude of oscillations.  </li>
 <li>Eventually, the system will <strong>settle into equilibrium</strong> (zero motion).  </li>
@@ -340,13 +382,13 @@ where:<br/>
 <p>This plot represents the phase space of a <strong>driven harmonic oscillator</strong>. In this system, there is an <strong>external periodic force</strong> acting on the pendulum, which drives it to oscillate. The system is influenced by the external force but has no damping. The variables plotted are:
 - <strong>X-axis</strong>: Angular displacement (<span class="arithmatex">\(\theta\)</span>), the position of the pendulum.
 - <strong>Y-axis</strong>: Angular velocity (<span class="arithmatex">\(\omega\)</span>), the speed at which the pendulum is moving.</p>
-<h3 id="observations_3">Observations:</h3>
+<h3 id="observations_4">Observations:</h3>
 <ul>
 <li>The phase space trajectory forms <strong>closed loops</strong> instead of spirals. This is typical for <strong>driven systems</strong>, where the system oscillates in a periodic manner due to the external force.</li>
 <li>Unlike the damped system, the motion here does not decay but continues in a <strong>steady oscillatory state</strong> due to the periodic driving force.</li>
 <li>The shape and size of the loops are determined by the amplitude and frequency of the external force. The system reaches a <strong>steady state</strong> where the amplitude of oscillations is constant, driven by the energy input from the external force.</li>
 </ul>
-<h3 id="key-takeaways_3">Key Takeaways:</h3>
+<h3 id="key-takeaways_4">Key Takeaways:</h3>
 <ul>
 <li><strong>Resonance</strong>: If the frequency of the driving force matches the system's natural frequency, resonance will occur, and the amplitude of oscillations will increase significantly.  </li>
 <li><strong>Steady oscillations</strong>: The system reaches a steady oscillatory state where the motion is periodic.  </li>
@@ -359,19 +401,19 @@ where:<br/>
 <li>The <strong>damped pendulum</strong> shows a <strong>decaying oscillation</strong>, leading to eventual rest due to energy loss over time.</li>
 <li>The <strong>driven harmonic oscillator</strong> shows <strong>steady oscillations</strong> maintained by an external periodic force, which keeps the system oscillating indefinitely without damping.</li>
 </ul>
-<h3 id="observations_4">Observations:</h3>
+<h3 id="observations_5">Observations:</h3>
 <ul>
 <li>In the <strong>damped pendulum phase space</strong>, the system spirals inward, indicating the loss of energy and the eventual cessation of motion.</li>
 <li>In the <strong>driven oscillator phase space</strong>, the system shows <strong>closed orbits</strong>, indicating that the pendulum is in a steady oscillatory state driven by the external force.</li>
 </ul>
-<h3 id="key-takeaways_4">Key Takeaways:</h3>
+<h3 id="key-takeaways_5">Key Takeaways:</h3>
 <ul>
 <li><strong>Damping</strong> causes energy dissipation and leads to eventual equilibrium (no motion).  </li>
 <li><strong>External forcing</strong> maintains continuous oscillations, and the system does not lose energy over time.  </li>
 <li>The <strong>phase space trajectory</strong> can provide valuable insights into the <strong>long-term behavior</strong> of oscillating systems, helping engineers and scientists understand how different forces affect motion in mechanical, electrical, and natural systems.</li>
 </ul>
 <hr/>
-<h2 id="conclusion_1">Conclusion</h2>
+<h2 id="conclusion_2">Conclusion</h2>
 <p>These phase space diagrams highlight the differences between damped, driven, and forced oscillatory systems. They provide a visual understanding of how <strong>energy dissipation</strong>, <strong>external forcing</strong>, and <strong>system damping</strong> influence the behavior of mechanical systems. The insights gained from these diagrams are crucial in designing systems that either require <strong>stability</strong> or that can be <strong>driven</strong> efficiently by external forces.</p>
 </div>
 </div><footer>
