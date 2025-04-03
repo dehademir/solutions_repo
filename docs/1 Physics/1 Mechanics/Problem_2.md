@@ -156,3 +156,67 @@ When the pendulum is driven by an external periodic force (i.e., $A \neq 0$), th
 
 ## Conclusion on Phase Space:
 Phase space diagrams help to visualize the dynamics of the pendulum, allowing us to distinguish between periodic, quasiperiodic, and chaotic behaviors, and understand the impact of damping and forcing on the system.
+
+Colab: https://colab.research.google.com/drive/1Lh0OVNaiavsvggUu-QJTk1F2hrZjLbne
+
+![alt text](image-8.png) ![alt text](image-9.png)
+
+# Explanation of the Phase Space Diagrams
+
+## 1️⃣ **Phase Space of Damped Pendulum (No Forcing)**
+
+### Description:
+This plot represents the phase space of a **damped pendulum** system where there is **no external forcing**. The system experiences **damping**, which reduces the amplitude of oscillations over time. The variables plotted are:
+- **X-axis**: Angular displacement ($\theta$), the position of the pendulum.
+- **Y-axis**: Angular velocity ($\omega$), the speed at which the pendulum is moving.
+
+### Observations:
+- The trajectory forms a **spiral** that moves inward toward the origin. This indicates that the pendulum's oscillations are decaying due to **damping**.
+- As the system evolves, the amplitude of the oscillations **gradually decreases**, eventually leading to zero displacement and velocity at the center (the origin), which signifies the system coming to rest.
+- The system exhibits **damped harmonic motion**, where energy is dissipated over time due to friction or resistance, which is why the spiral path decays.
+
+### Key Takeaways:
+- The damping causes the **energy of the system to dissipate** over time, reducing the amplitude of oscillations.  
+- Eventually, the system will **settle into equilibrium** (zero motion).  
+- This phase space diagram is typical for systems like **automobile suspensions**, **seismic engineering**, or **RLC circuits** in electronics where damping plays an essential role.
+
+---
+
+## 2️⃣ **Phase Space of Driven Harmonic Oscillator (With Sinusoidal Force)**
+
+### Description:
+This plot represents the phase space of a **driven harmonic oscillator**. In this system, there is an **external periodic force** acting on the pendulum, which drives it to oscillate. The system is influenced by the external force but has no damping. The variables plotted are:
+- **X-axis**: Angular displacement ($\theta$), the position of the pendulum.
+- **Y-axis**: Angular velocity ($\omega$), the speed at which the pendulum is moving.
+
+### Observations:
+- The phase space trajectory forms **closed loops** instead of spirals. This is typical for **driven systems**, where the system oscillates in a periodic manner due to the external force.
+- Unlike the damped system, the motion here does not decay but continues in a **steady oscillatory state** due to the periodic driving force.
+- The shape and size of the loops are determined by the amplitude and frequency of the external force. The system reaches a **steady state** where the amplitude of oscillations is constant, driven by the energy input from the external force.
+
+### Key Takeaways:
+- **Resonance**: If the frequency of the driving force matches the system's natural frequency, resonance will occur, and the amplitude of oscillations will increase significantly.  
+- **Steady oscillations**: The system reaches a steady oscillatory state where the motion is periodic.  
+- This phase space diagram is useful in systems like **forced RLC circuits**, **mechanical oscillators**, and **vibrating systems** in engineering, where external forces drive the motion.
+
+---
+
+## 3️⃣ **Comparison Between Damped and Driven Systems**
+
+### Comparison Overview:
+- The **damped pendulum** shows a **decaying oscillation**, leading to eventual rest due to energy loss over time.
+- The **driven harmonic oscillator** shows **steady oscillations** maintained by an external periodic force, which keeps the system oscillating indefinitely without damping.
+
+### Observations:
+- In the **damped pendulum phase space**, the system spirals inward, indicating the loss of energy and the eventual cessation of motion.
+- In the **driven oscillator phase space**, the system shows **closed orbits**, indicating that the pendulum is in a steady oscillatory state driven by the external force.
+
+### Key Takeaways:
+- **Damping** causes energy dissipation and leads to eventual equilibrium (no motion).  
+- **External forcing** maintains continuous oscillations, and the system does not lose energy over time.  
+- The **phase space trajectory** can provide valuable insights into the **long-term behavior** of oscillating systems, helping engineers and scientists understand how different forces affect motion in mechanical, electrical, and natural systems.
+
+---
+
+## Conclusion
+These phase space diagrams highlight the differences between damped, driven, and forced oscillatory systems. They provide a visual understanding of how **energy dissipation**, **external forcing**, and **system damping** influence the behavior of mechanical systems. The insights gained from these diagrams are crucial in designing systems that either require **stability** or that can be **driven** efficiently by external forces.
