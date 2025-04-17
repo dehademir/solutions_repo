@@ -1,174 +1,154 @@
-# Problem 2
+#  Problem 2: 
 
-# Escape Velocities and Cosmic Velocities
+## Escape Velocities and Cosmic Velocities
 
-## Motivation:
+##  Motivation
 The concept of escape velocity is crucial for understanding the conditions required to leave a celestial body's gravitational influence. Extending this concept, the first, second, and third cosmic velocities define the thresholds for orbiting, escaping, and leaving a star system. These principles underpin modern space exploration, from launching satellites to interplanetary missions.
 
 ---
 
-## 1. Cosmic Velocities Definitions
+##  Definitions
 
-### 1.1. First Cosmic Velocity (Orbital Velocity)
+###  First Cosmic Velocity (Orbital Velocity)
 
-The first cosmic velocity refers to the **orbital velocity**, which is the minimum speed that an object must have to enter a stable orbit around a celestial body. It is the velocity at which an object's centrifugal force balances the gravitational force pulling it towards the body. 
+The minimum velocity required for a body to stay in a stable circular orbit around a celestial body near its surface.
 
-- **Formula**: 
-  $$
-  v_1 = \sqrt{\frac{GM}{r}}
-  $$
-  Where:
-  - $v_1$ = Orbital velocity (First cosmic velocity)
-  - $G$ = Gravitational constant ($6.674 \times 10^{-11} \, \text{m}^3\text{kg}^{-1}\text{s}^{-2}$)
-  - $M$ = Mass of the celestial body (in kg)
-  - $r$ = Radius of the celestial body (in meters)
-
-### 1.2. Second Cosmic Velocity (Escape Velocity)
-
-The second cosmic velocity is the **escape velocity**, which is the minimum speed required for an object to escape the gravitational pull of a celestial body, reaching infinite distance without further propulsion.
-
-- **Formula**: 
-  $$
-  v_2 = \sqrt{\frac{2GM}{r}}
-  $$
-  Where:
-  - $v_2$ = Escape velocity (Second cosmic velocity)
-  - $G$ = Gravitational constant ($6.674 \times 10^{-11} \, \text{m}^3\text{kg}^{-1}\text{s}^{-2}$)
-  - $M$ = Mass of the celestial body (in kg)
-  - $r$ = Radius of the celestial body (in meters)
-
-### 1.3. Third Cosmic Velocity (Solar Escape Velocity)
-
-The third cosmic velocity is the **solar escape velocity**, which is the speed required for an object to escape the gravitational influence of the Sun itself, moving beyond the solar system.
-
-- **Formula**: 
-  $$
-  v_3 = \sqrt{\frac{2GM_{\odot}}{r_{\odot}}}
-  $$
-  Where:
-  - $v_3$ = Solar escape velocity (Third cosmic velocity)
-  - $G$ = Gravitational constant
-  - $M_{\odot}$ = Mass of the Sun ($1.989 \times 10^{30} \, \text{kg}$)
-  - $r_{\odot}$ = Distance from the Earth to the Sun (approximately $1.496 \times 10^{11} \, \text{m}$)
+- **Physical meaning**: Keeps a satellite in orbit close to the surface without falling back due to gravity.
+- **Formula**:  
+  $$v_1 = \sqrt{\frac{GM}{R}}$$  
+  where:  
+  - $G$ = Gravitational constant $ \approx 6.674 \times 10^{-11} \, \text{m}^3/\text{kg s}^2 $
+  - $M$ = Mass of the planet  
+  - $R$ = Radius of the planet
 
 ---
 
-## 2. Mathematical Derivations
+###  Second Cosmic Velocity (Escape Velocity)
 
-The formulas for the first and second cosmic velocities are derived based on the balance between the forces acting on an object.
+The minimum velocity required to escape the gravitational field of a planet, neglecting atmospheric drag.
 
-1. **Orbital Velocity**: The gravitational force ($F_g = \frac{GMm}{r^2}$) and the centrifugal force ($F_c = \frac{mv_1^2}{r}$) must balance for an object to remain in orbit.
-
-2. **Escape Velocity**: The escape velocity is derived from the principle of energy conservation, equating the kinetic energy required to break free from a gravitational field to the potential energy of the object.
+- **Physical meaning**: Needed to send spacecraft into deep space, free from the planet’s gravity.
+- **Formula**:  
+  $$v_2 = \sqrt{\frac{2GM}{R}} = \sqrt{2} \cdot v_1$$
 
 ---
 
-## 3. Python Script: Calculating and Visualizing Cosmic Velocities
+###  Third Cosmic Velocity (Solar System Escape Velocity)
 
-The following Python code calculates the escape velocities and cosmic velocities for various celestial bodies, including Earth, Mars, and Jupiter. It also plots these velocities.
+The minimum velocity required to leave the solar system from a planet’s orbit, overcoming the Sun’s gravity.
 
-collab link https://colab.research.google.com/drive/1WGAbeWvqnai4rkRaVV8pIFJkgRWM3R1K
+- **Physical meaning**: Required to send probes like Voyager 1 & 2 out of the solar system.
+- **Formula** (from Earth's orbit):  
+  $$v_3 = \sqrt{v_{e,\odot}^2 + v_{o}^2}$$  
+  where:
+  - $v_{e,\odot}$ = Escape velocity from the Sun at Earth's orbital distance  
+  - $v_o$ = Orbital velocity of Earth around the Sun $\approx 29.78 \, \text{km/s}$
 
-![alt text](image-6.png)
+---
 
-## 1. Comparison of Escape and Orbital Velocities for Celestial Bodies
+##  Derivations
 
-### Explanation:
+### First Cosmic Velocity:
+From centripetal force = gravitational force:
+$$\frac{mv^2}{R} = \frac{GMm}{R^2}$$  
+Cancelling $m$ and solving for $v$:
+$$v_1 = \sqrt{\frac{GM}{R}}$$
 
-This visualization compares the **escape velocity** and **orbital velocity** for three celestial bodies: Earth, Mars, and Jupiter. The two velocities represent different aspects of motion for an object near a celestial body.
+---
 
-#### Escape Velocity:
+### Second Cosmic Velocity:
+Using conservation of energy (total energy = 0 at escape):
+$$\frac{1}{2}mv^2 - \frac{GMm}{R} = 0$$  
+Solving for $v$:
+$$v_2 = \sqrt{\frac{2GM}{R}}$$
 
-The **escape velocity** is the minimum speed that an object must reach in order to break free from the gravitational influence of a celestial body without any additional propulsion. It is the speed required to overcome the gravitational pull of the body and escape into space.
+---
 
-The escape velocity is given by the formula:
+### Third Cosmic Velocity:
+Escape from Sun's gravity from Earth's orbit:
+$$v_3 = \sqrt{v_{e,\odot}^2 + v_o^2}$$  
+Where:
+- $v_{e,\odot} = \sqrt{\frac{2G M_{\odot}}{R_{\text{orbit}}}}$
+
+---
+
+##  Calculations for Earth, Mars, and Jupiter
+
+Let’s define:
+
+- $G = 6.674 \times 10^{-11}$ m³/kg·s²
+
+### Earth:
+- $M = 5.972 \times 10^{24} \, \text{kg}$
+- $R = 6.371 \times 10^6 \, \text{m}$
+- $v_1 \approx 7.91 \, \text{km/s}$
+- $v_2 \approx 11.2 \, \text{km/s}$
+- $v_3 \approx 42.1 \, \text{km/s}$
+
+### Mars:
+- $M = 6.39 \times 10^{23} \, \text{kg}$
+- $R = 3.39 \times 10^6 \, \text{m}$
+- $v_1 \approx 3.55 \, \text{km/s}$
+- $v_2 \approx 5.03 \, \text{km/s}$
+
+### Jupiter:
+- $M = 1.898 \times 10^{27} \, \text{kg}$
+- $R = 6.9911 \times 10^7 \, \text{m}$
+- $v_1 \approx 42.1 \, \text{km/s}$
+- $v_2 \approx 59.5 \, \text{km/s}$
+
+---
+
+##  Importance in Space Exploration
+
+- **$v_1$ (Orbital Velocity)**: Crucial for satellites, space stations, and initial orbit insertion.
+- **$v_2$ (Escape Velocity)**: Required for deep space missions (e.g., Moon, Mars, interplanetary travel).
+- **$v_3$ (Solar System Escape)**: Needed for missions leaving the solar system (e.g., Voyager, New Horizons).
+
+Understanding these velocities allows engineers to plan fuel loads, rocket thrusts, and trajectories for efficient space missions.
+
+---
+
+Collab link https://colab.research.google.com/drive/1ybsC2sLWqxNMcXwTknmFMkRApFqbhZ7A
+
+![alt text](image-11.png)
+
+![alt text](image-13.png)
+
+## Visualization 1: Bar Chart of First and Second Cosmic Velocities
+
+This bar chart compares the **first** and **second cosmic velocities** for **Earth**, **Mars**, and **Jupiter**.
+
+- The **first cosmic velocity ($v_1$)** is the speed required to achieve a stable low orbit around the planet.
+- The **second cosmic velocity ($v_2$)** is the speed required to escape a planet’s gravitational field entirely, assuming no atmospheric resistance.
+
+### Observations:
+- **Jupiter** has significantly higher values for both $v_1$ and $v_2$ due to its massive size and strong gravity:
+  - $v_1 \approx 42.1$ km/s
+  - $v_2 \approx 59.5$ km/s
+- **Earth** lies in the middle:
+  - $v_1 \approx 7.91$ km/s
+  - $v_2 \approx 11.2$ km/s
+- **Mars** has the lowest values:
+  - $v_1 \approx 3.55$ km/s
+  - $v_2 \approx 5.03$ km/s
+
+These differences reflect how planetary **mass** and **radius** directly affect the gravitational force and, therefore, the required velocities for space travel.
+
+---
+
+## Visualization 2: Line Plot of Escape Velocity vs Planetary Radius
+
+This plot shows how **escape velocity ($v_2$)** changes with varying **planetary radius**, assuming two different planet masses:
+- One with a mass equal to **Earth**
+- One with a mass equal to **Jupiter**
+
+### Formula:
 $$
-v_2 = \sqrt{\frac{2GM}{r}}
+v_2 = \sqrt{\frac{2GM}{R}}
 $$
-where:
-- $v_2$ is the escape velocity,
-- $G$ is the gravitational constant ($6.67430 \times 10^{-11}$ m³·kg⁻¹·s⁻²),
-- $M$ is the mass of the celestial body,
-- $r$ is the radius of the celestial body.
 
-For example:
-- **Earth's escape velocity** is about **11.2 km/s**.
-- **Mars's escape velocity** is around **5.0 km/s**.
-- **Jupiter's escape velocity** is significantly higher at **60.2 km/s** due to its much larger mass.
-
-#### Orbital Velocity:
-
-The **orbital velocity** is the speed required for an object to enter into a stable orbit around a celestial body. It is the velocity at which an object must travel to counterbalance the gravitational pull of the body and stay in orbit, without falling back to the surface or escaping.
-
-The orbital velocity is given by the formula:
-$$
-v_1 = \sqrt{\frac{GM}{r}}
-$$
-where:
-- $v_1$ is the orbital velocity,
+Where:
 - $G$ is the gravitational constant,
-- $M$ is the mass of the celestial body,
-- $r$ is the radius of the celestial body.
-
-For example:
-- **Earth's orbital velocity** is around **7.8 km/s**.
-- **Mars's orbital velocity** is approximately **3.4 km/s**.
-- **Jupiter's orbital velocity** is about **13.1 km/s**.
-
-#### Observations:
-
-From the plot, we can see that the **escape velocity** is always higher than the **orbital velocity** for each celestial body. This is because to escape the gravitational pull of a celestial body, an object needs to move faster than the speed required to maintain a stable orbit. 
-
-For example:
-- The escape velocity for Earth is about **1.44 times** the orbital velocity.
-- For Mars, the escape velocity is around **1.47 times** the orbital velocity.
-- For Jupiter, the escape velocity is roughly **4.6 times** the orbital velocity.
-
-### Why This Comparison Matters:
-
-- The **escape velocity** is important in the context of space exploration, as it determines how much speed a spacecraft must achieve to leave the gravitational pull of a planet or moon.
-- The **orbital velocity** is crucial for understanding satellite motion and orbital mechanics, as it is the speed required for a satellite to stay in orbit without being pulled back to the surface or escaping into space.
-
-This comparison highlights the **gravitational strength** of each body and how much energy (in the form of velocity) is required to either stay in orbit or escape from that body.
-
-![alt text](image-7.png)
-
-## 2. Escape Velocity to Orbital Velocity Ratio for Celestial Bodies
-
-### Explanation:
-
-This visualization focuses on the ratio of **escape velocity** to **orbital velocity** for different celestial bodies: Earth, Mars, and Jupiter. This ratio provides insight into how much faster an object must travel to escape a celestial body’s gravitational field compared to maintaining a stable orbit around it.
-
-#### Escape Velocity to Orbital Velocity Ratio:
-
-The ratio of escape velocity to orbital velocity is calculated as:
-$$
-\text{Ratio} = \frac{v_2}{v_1}
-$$
-where:
-- $v_2$ is the escape velocity,
-- $v_1$ is the orbital velocity.
-
-This ratio tells us how much more speed is required to escape the gravitational influence of a body than to simply orbit it. The greater the ratio, the more significant the difference in speed between escaping the body and orbiting it.
-
-#### For Each Celestial Body:
-
-- **Earth**: The escape velocity is approximately **11.2 km/s**, and the orbital velocity is about **7.8 km/s**. Thus, the escape velocity is around **1.44 times** the orbital velocity.
-  
-- **Mars**: The escape velocity is **5.0 km/s**, and the orbital velocity is about **3.4 km/s**. Hence, the escape velocity is approximately **1.47 times** the orbital velocity.
-
-- **Jupiter**: The escape velocity is **60.2 km/s**, and the orbital velocity is **13.1 km/s**. This results in the escape velocity being roughly **4.6 times** the orbital velocity.
-
-#### Observations:
-
-- The **ratio** provides a simple comparison across celestial bodies and helps understand the relative difficulty of escaping their gravitational pull.
-- For Earth, the ratio is around **1.44**, meaning that the escape velocity is about **44%** higher than the orbital velocity.
-- For Mars, the ratio is around **1.47**, indicating that the escape velocity is about **47%** higher than the orbital velocity.
-- For Jupiter, the ratio is significantly higher at **4.6**, meaning that escaping Jupiter's gravitational pull requires significantly more speed than maintaining orbit.
-
-#### Importance of the Ratio:
-
-- A higher **escape/orbital velocity ratio** means that it requires significantly more energy to break free from the celestial body’s gravitational field than to simply orbit it. This is particularly important for mission planning in space exploration.
-- **Jupiter**, with its massive size, shows a much higher ratio than **Earth** or **Mars**, indicating that it would be much harder (and thus more energy-intensive) to escape from Jupiter compared to smaller planets.
-
-In summary, the **escape velocity to orbital velocity ratio** provides a measure of the **relative gravitational strength** of different celestial bodies and how it influences space travel. The higher the ratio, the more challenging it is to escape a planet’s gravitational influence, making this an important factor for spacecraft trajectory planning and mission design.
+- $M$ is the planet's mass,
+- $R$ is the radius of the planet.
