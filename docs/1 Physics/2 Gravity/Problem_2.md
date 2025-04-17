@@ -46,38 +46,98 @@ The minimum velocity required to leave the solar system from a planet’s orbit,
 
 ---
 
-##  Derivations
-
-### First Cosmic Velocity:
-From centripetal force = gravitational force:
-$$\frac{mv^2}{R} = \frac{GMm}{R^2}$$  
-Cancelling $m$ and solving for $v$:
-$$v_1 = \sqrt{\frac{GM}{R}}$$
-
----
-
-### Second Cosmic Velocity:
-Using conservation of energy (total energy = 0 at escape):
-$$\frac{1}{2}mv^2 - \frac{GMm}{R} = 0$$  
-Solving for $v$:
-$$v_2 = \sqrt{\frac{2GM}{R}}$$
-
----
-
-### Third Cosmic Velocity:
-Escape from Sun's gravity from Earth's orbit:
-$$v_3 = \sqrt{v_{e,\odot}^2 + v_o^2}$$  
-Where:
-- $v_{e,\odot} = \sqrt{\frac{2G M_{\odot}}{R_{\text{orbit}}}}$
-
----
-
 ##  Calculations for Earth, Mars, and Jupiter
 
 Let’s define:
 
 - $G = 6.674 \times 10^{-11}$ m³/kg·s²
 
+# Derivation of the Three Cosmic Velocities
+
+## 1. First Cosmic Velocity ($v_1$) – Orbital Velocity
+
+This is the minimum velocity required to stay in a stable circular orbit around a planet, just above its surface.
+
+### Derivation:
+From Newton's law of gravitation and centripetal force:
+
+$$
+\frac{mv^2}{R} = \frac{GMm}{R^2}
+$$
+
+Solving for $v$:
+
+$$
+v_1 = \sqrt{\frac{GM}{R}}
+$$
+
+---
+
+## 2. Second Cosmic Velocity ($v_2$) – Escape Velocity
+
+This is the minimum velocity required to escape a planet’s gravitational field entirely.
+
+### Derivation:
+From conservation of energy:
+
+$$
+\frac{1}{2}mv^2 = \frac{GMm}{R}
+$$
+
+Solving for $v$:
+
+$$
+v_2 = \sqrt{\frac{2GM}{R}} = \sqrt{2} \cdot v_1
+$$
+
+---
+
+## 3. Third Cosmic Velocity ($v_3$) – Solar System Escape Velocity
+
+This is the minimum velocity required to escape the Sun’s gravity **starting from Earth's orbit**.
+
+### Derivation:
+We must escape the Sun’s gravity, considering Earth is already orbiting it at $v_o \approx 29.78$ km/s.
+
+Total velocity required:
+
+$$
+v_3 = \sqrt{v_{e,\odot}^2 + v_o^2}
+$$
+
+Where:
+
+- $v_{e,\odot} = \sqrt{\frac{2GM_\odot}{R_{\text{orbit}}}}$
+
+---
+
+# Values for Earth
+
+Using:
+- $G = 6.674 \times 10^{-11} \, \text{m}^3/\text{kg s}^2$
+- $M = 5.972 \times 10^{24} \, \text{kg}$
+- $R = 6.371 \times 10^6 \, \text{m}$
+
+We calculate:
+
+- $v_1 \approx 7.91$ km/s
+- $v_2 \approx 11.2$ km/s
+- $v_3 \approx 42.1$ km/s
+
+---
+
+# Comparison Table (Earth, Moon, Mars, Jupiter)
+
+| Planet  | Mass ($\times 10^{24}$ kg) | Radius (km) | $v_1$ (km/s) | $v_2$ (km/s) | $v_3$ (km/s)\* |
+|---------|-----------------------------|-------------|--------------|--------------|----------------|
+| Earth   | 5.972                       | 6371        | 7.91         | 11.2         | 42.1           |
+| Moon    | 0.073                       | 1737        | 1.68         | 2.38         | —              |
+| Mars    | 0.639                       | 3390        | 3.55         | 5.03         | 34.1           |
+| Jupiter | 1898                        | 69911       | 42.1         | 59.5         | 108.0          |
+
+\* $v_3$ values are approximations assuming escape from Sun starting at that planet's orbit.
+
+---
 ### Earth:
 - $M = 5.972 \times 10^{24} \, \text{kg}$
 - $R = 6.371 \times 10^6 \, \text{m}$
@@ -106,6 +166,10 @@ Let’s define:
 - **$v_3$ (Solar System Escape)**: Needed for missions leaving the solar system (e.g., Voyager, New Horizons).
 
 Understanding these velocities allows engineers to plan fuel loads, rocket thrusts, and trajectories for efficient space missions.
+
+---
+
+
 
 ---
 
