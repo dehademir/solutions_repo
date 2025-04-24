@@ -17,7 +17,7 @@ The minimum velocity required for a body to stay in a stable circular orbit arou
 - **Formula**:  
   $$v_1 = \sqrt{\frac{GM}{R}}$$  
   where:  
-  - $G$ = Gravitational constant $ \approx 6.674 \times 10^{-11} \, \text{m}^3/\text{kg s}^2 $
+  - $G$ = Gravitational constant$\approx 6.674 \times 10^{-11} \, \text{m}^3/\text{kg s}^2 $
   - $M$ = Mass of the planet  
   - $R$ = Radius of the planet
 
