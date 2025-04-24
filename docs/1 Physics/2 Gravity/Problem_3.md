@@ -208,8 +208,7 @@ This plot shows various payloads being launched into different orbital paths fro
 
 This visual demonstrates how a single rocket launch could deploy different payloads into various orbital regimes by adjusting velocity, trajectory, and altitude.
 
-![alt text](image-15.png)
-
+![alt text](image-19.png)
 ### Visualization 3: Simulated Payload Trajectories from Earth
 
 This plot shows the paths a payload might follow when launched from Earth with different initial velocities:
@@ -221,7 +220,7 @@ This plot shows the paths a payload might follow when launched from Earth with d
 The escape velocity from Earth's surface is approximately **11.2 km/s**. These trajectories originate from a common launch point near the surface.
 
 
-![alt text](image-16.png)
+![alt text](image-20.png)
 
 ### Visualization 4: Projectile Trajectories Toward Earth from Various Angles
 
