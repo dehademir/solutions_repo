@@ -173,3 +173,5 @@ The plot is a **contour plot** that shows the displacement of the water surface 
 - **Destructive interference** occurs at other regions, where the waves from different sources meet out-of-phase and cancel each other out, leading to lower displacement.
 
 ![alt text](moving_three_center_wave.gif)
+
+![alt text](output.png)
