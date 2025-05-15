@@ -75,9 +75,9 @@ $$
 \mathbf{v_d} = \frac{\mathbf{E} \times \mathbf{B}}{B^2}
 $$
 
-collab: https://colab.research.google.com/drive/1r45nz584tcUKeJidLn8081UvAaX9KRKI
-
-![alt text](image-1.png)
+[collab link](https://colab.research.google.com/drive/1r45nz584tcUKeJidLn8081UvAaX9KRKI)
+ 
+![alt text](image_2025-05-15_141311505.png)
 
 # Simulating the Effects of the Lorentz Force
 
@@ -94,7 +94,7 @@ This fundamental law plays a key role in many scientific and engineering systems
 - **Plasma Confinement**: Magnetic fields confine plasma in fusion devices like tokamaks.
 - **Astrophysics**: Governing charged particle motion in space plasmas.
 
-![alt text](image-2.png)
+![alt text](image-4.png)
 
 # Simulating the Effects of the Lorentz Force
 
@@ -134,3 +134,5 @@ Scenarios:
 - **Larmor Radius**: $R = \frac{mv}{|qB|}$
 - **Cyclotron Frequency**: $\omega = \frac{|q|B}{m}$
 - **Drift Velocity**: $\mathbf{v_d} = \frac{\mathbf{E} \times \mathbf{B}}{B^2}$
+
+![alt text](image-6.png)
