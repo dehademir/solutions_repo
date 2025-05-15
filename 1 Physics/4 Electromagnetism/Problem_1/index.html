@@ -172,6 +172,114 @@
 <div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
 <div class="section" itemprop="articleBody">
 <h1 id="problem-1">Problem 1</h1>
+<h1 id="simulating-the-effects-of-the-lorentz-force">Simulating the Effects of the Lorentz Force</h1>
+<h2 id="motivation">Motivation</h2>
+<p>The Lorentz force governs the motion of charged particles in electric and magnetic fields and is given by:</p>
+<div class="arithmatex">\[
+\mathbf{F} = q\mathbf{E} + q\mathbf{v} \times \mathbf{B}
+\]</div>
+<p>This fundamental law plays a key role in many scientific and engineering systems such as:
+- <strong>Particle Accelerators</strong>: Controlling charged particle beams.
+- <strong>Mass Spectrometers</strong>: Differentiating ions by their mass-to-charge ratio.
+- <strong>Plasma Confinement</strong>: Magnetic fields confine plasma in fusion devices like tokamaks.
+- <strong>Astrophysics</strong>: Governing charged particle motion in space plasmas.</p>
+<hr/>
+<h2 id="1-exploration-of-applications">1. Exploration of Applications</h2>
+<h3 id="systems-where-lorentz-force-is-key">Systems Where Lorentz Force is Key:</h3>
+<ul>
+<li><strong>Cyclotrons &amp; Synchrotrons</strong>: Magnetic fields bend particle paths to allow acceleration in circular motion.</li>
+<li><strong>Mass Spectrometers</strong>: Particles experience force based on <span class="arithmatex">\(\mathbf{v} \times \mathbf{B}\)</span>, revealing mass-to-charge ratios.</li>
+<li><strong>Plasma Confinement Devices</strong>: Magnetic fields restrict charged particles to follow helical paths.</li>
+</ul>
+<h3 id="roles-of-mathbfe-and-mathbfb">Roles of <span class="arithmatex">\(\mathbf{E}\)</span> and <span class="arithmatex">\(\mathbf{B}\)</span>:</h3>
+<ul>
+<li><strong>Electric Field (<span class="arithmatex">\(\mathbf{E}\)</span>)</strong>: Accelerates or decelerates particles linearly.</li>
+<li><strong>Magnetic Field (<span class="arithmatex">\(\mathbf{B}\)</span>)</strong>: Alters trajectory through circular or helical motion; does no work but redirects.</li>
+</ul>
+<hr/>
+<h2 id="2-simulating-particle-motion">2. Simulating Particle Motion</h2>
+<p>We'll solve the equations of motion using numerical methods like the <strong>Euler</strong> or <strong>Runge-Kutta 4th order</strong> method.</p>
+<h3 id="equations-of-motion">Equations of Motion:</h3>
+<p>Given:
+- Charge <span class="arithmatex">\(q\)</span>
+- Mass <span class="arithmatex">\(m\)</span>
+- Position <span class="arithmatex">\(\mathbf{r}\)</span>
+- Velocity <span class="arithmatex">\(\mathbf{v}\)</span>
+- Fields <span class="arithmatex">\(\mathbf{E}\)</span> and <span class="arithmatex">\(\mathbf{B}\)</span></p>
+<p>Acceleration:
+$$
+\mathbf{a} = \frac{q}{m}(\mathbf{E} + \mathbf{v} \times \mathbf{B})
+$$</p>
+<h3 id="scenarios">Scenarios:</h3>
+<ol>
+<li><strong>Uniform Magnetic Field Only</strong>: Circular motion (Larmor motion).</li>
+<li><strong>Uniform Electric + Magnetic Fields</strong>: Helical motion.</li>
+<li><strong>Crossed Fields (<span class="arithmatex">\(\mathbf{E} \perp \mathbf{B}\)</span>)</strong>: Drift motion.</li>
+</ol>
+<hr/>
+<h2 id="3-parameter-exploration">3. Parameter Exploration</h2>
+<p>We allow users to modify:
+- <span class="arithmatex">\(E\)</span>, <span class="arithmatex">\(B\)</span> field strengths and directions.
+- Initial velocity <span class="arithmatex">\(\mathbf{v_0}\)</span>.
+- Particle charge <span class="arithmatex">\(q\)</span> and mass <span class="arithmatex">\(m\)</span>.</p>
+<p>We observe:
+- Larmor radius:
+$$
+R = \frac{mv}{|qB|}
+$$
+- Cyclotron frequency:
+$$
+\omega = \frac{|q|B}{m}
+$$
+- Drift velocity in crossed fields:
+$$
+\mathbf{v_d} = \frac{\mathbf{E} \times \mathbf{B}}{B^2}
+$$</p>
+<p>collab: https://colab.research.google.com/drive/1r45nz584tcUKeJidLn8081UvAaX9KRKI</p>
+<p><img alt="alt text" src="../image-1.png"/></p>
+<h1 id="simulating-the-effects-of-the-lorentz-force_1">Simulating the Effects of the Lorentz Force</h1>
+<h2 id="motivation_1">Motivation</h2>
+<p>The Lorentz force governs the motion of charged particles in electric and magnetic fields and is given by:</p>
+<div class="arithmatex">\[
+\mathbf{F} = q\mathbf{E} + q\mathbf{v} \times \mathbf{B}
+\]</div>
+<p>This fundamental law plays a key role in many scientific and engineering systems such as:
+- <strong>Particle Accelerators</strong>: Controlling charged particle beams.
+- <strong>Mass Spectrometers</strong>: Differentiating ions by their mass-to-charge ratio.
+- <strong>Plasma Confinement</strong>: Magnetic fields confine plasma in fusion devices like tokamaks.
+- <strong>Astrophysics</strong>: Governing charged particle motion in space plasmas.</p>
+<p><img alt="alt text" src="../image-2.png"/></p>
+<h1 id="simulating-the-effects-of-the-lorentz-force_2">Simulating the Effects of the Lorentz Force</h1>
+<h2 id="motivation_2">Motivation</h2>
+<p>The Lorentz force is defined as:</p>
+<div class="arithmatex">\[
+\mathbf{F} = q\mathbf{E} + q\mathbf{v} \times \mathbf{B}
+\]</div>
+<p>It determines the motion of charged particles in electric and magnetic fields, essential in systems like particle accelerators, mass spectrometers, and plasma confinement.</p>
+<hr/>
+<h2 id="1-key-applications">1. Key Applications</h2>
+<ul>
+<li><strong>Cyclotrons</strong>: Circular motion from magnetic fields.</li>
+<li><strong>Mass Spectrometers</strong>: Ion separation via <span class="arithmatex">\(\mathbf{v} \times \mathbf{B}\)</span>.</li>
+<li><strong>Tokamaks</strong>: Helical particle confinement.</li>
+</ul>
+<hr/>
+<h2 id="2-simulation-approach">2. Simulation Approach</h2>
+<p>Using numerical integration (Euler or Runge-Kutta), we solve:</p>
+<div class="arithmatex">\[
+\mathbf{a} = \frac{q}{m}(\mathbf{E} + \mathbf{v} \times \mathbf{B})
+\]</div>
+<p>Scenarios:
+- Uniform <span class="arithmatex">\(\mathbf{B}\)</span>: circular motion.
+- Uniform <span class="arithmatex">\(\mathbf{E}\)</span> and <span class="arithmatex">\(\mathbf{B}\)</span>: helical motion.
+- Crossed fields: drift motion.</p>
+<hr/>
+<h2 id="3-parameter-effects">3. Parameter Effects</h2>
+<ul>
+<li><strong>Larmor Radius</strong>: <span class="arithmatex">\(R = \frac{mv}{|qB|}\)</span></li>
+<li><strong>Cyclotron Frequency</strong>: <span class="arithmatex">\(\omega = \frac{|q|B}{m}\)</span></li>
+<li><strong>Drift Velocity</strong>: <span class="arithmatex">\(\mathbf{v_d} = \frac{\mathbf{E} \times \mathbf{B}}{B^2}\)</span></li>
+</ul>
 </div>
 </div><footer>
 <div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">
