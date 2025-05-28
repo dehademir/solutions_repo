@@ -173,6 +173,30 @@
 <div class="section" itemprop="articleBody">
 <h1 id="problem-1">Problem 1</h1>
 <h1 id="equivalent-resistance-using-graph-theory-with-networkx">Equivalent Resistance Using Graph Theory with NetworkX</h1>
+<h3 id="11-motivation">1.1 Motivation</h3>
+<p>Calculating <strong>equivalent resistance</strong> is fundamental in circuit analysis and design. As electronic systems grow in complexity—with nested loops, bridges, and multiple branches—manual series/parallel simplifications become error-prone and time-consuming. An automated, algorithmic solution is preferable.</p>
+<h3 id="12-challenges-of-manual-simplification">1.2 Challenges of Manual Simplification</h3>
+<ul>
+<li><strong>Human Error:</strong> Complex networks easily lead to omission or misapplication of reduction rules.  </li>
+<li><strong>Scalability:</strong> Traditional methods do not scale well beyond a handful of components.  </li>
+<li><strong>Lack of Automation:</strong> Each new circuit requires re-derivation, hindering rapid prototyping.</li>
+</ul>
+<hr/>
+<h2 id="2-background-concepts">2. Background Concepts</h2>
+<h3 id="21-graph-theory-fundamentals">2.1 Graph Theory Fundamentals</h3>
+<p>A <strong>graph</strong> <span class="arithmatex">\(G=(V,E)\)</span> consists of:<br/>
+- <strong>Vertices (nodes)</strong> <span class="arithmatex">\(V\)</span>: Represent circuit junctions<br/>
+- <strong>Edges</strong> <span class="arithmatex">\(E\)</span>: Represent resistors, optionally weighted  </p>
+<p><strong>Graph types in NetworkX:</strong><br/>
+- <code>Graph</code> — undirected, no parallel edges<br/>
+- <code>MultiGraph</code> — undirected, supports parallel edges<br/>
+- <code>DiGraph</code> / <code>MultiDiGraph</code> — directed variants  </p>
+<h3 id="22-electrical-circuit-basics">2.2 Electrical Circuit Basics</h3>
+<ul>
+<li><strong>Series resistors</strong>: share a single junction → <span class="arithmatex">\(R_\text{eq}=R_1+R_2\)</span> </li>
+<li><strong>Parallel resistors</strong>: share both end-nodes → <span class="arithmatex">\(\frac1{R_\text{eq}}=\frac1{R_1}+\frac1{R_2}\)</span> </li>
+<li><strong>Delta–Y (Star–Delta)</strong>: transforms triangular loops into trees when no simple series/parallel applies  </li>
+</ul>
 <h2 id="why-use-graph-theory">Why Use Graph Theory?</h2>
 <p>In electrical engineering, calculating <strong>equivalent resistance</strong> is essential for analyzing circuits. Traditionally, we simplify circuits by:
 - Combining <strong>resistors in series</strong> (add them)
@@ -220,7 +244,7 @@
 </table>
 <p>For circuits, we often use <strong><code>MultiGraph</code></strong> to model parallel resistors.</p>
 <hr/>
-<p>[collab][https://colab.research.google.com/drive/1fsUJpDVypQU71mnMMy1hdp6iO0DhJJAF)</p>
+<p><a href="https://colab.research.google.com/drive/1fsUJpDVypQU71mnMMy1hdp6iO0DhJJAF">collab</a></p>
 <p><img alt="alt text" src="../image-1.png"/></p>
 <h1 id="visualization-of-equivalent-resistance-using-graph-theory">Visualization of Equivalent Resistance Using Graph Theory</h1>
 <h2 id="objective">Objective</h2>
@@ -235,6 +259,60 @@
 - Final segment: <code>D-E</code> (1Ω)</p>
 <p><img alt="alt text" src="../image.png"/></p>
 <p><img alt="alt text" src="../image-3.png"/></p>
+<h1 id="equivalent-resistance-graph-theory-reduction-steps">Equivalent Resistance: Graph-Theory Reduction Steps</h1>
+<p>The figure below illustrates the step-by-step reduction of a nested resistor network into a single equivalent resistor.  </p>
+<p><strong>Figure 1.</strong><br/>
+1. <strong>Original Nested Circuit</strong><br/>
+   - <strong>Nodes:</strong> A, B, C, D, E<br/>
+   - <strong>Resistors:</strong><br/>
+     - A–B = 2 Ω<br/>
+     - B–C = 2 Ω<br/>
+     - C–D = 4 Ω<br/>
+     - B–D = 4 Ω<br/>
+     - D–E = 1 Ω  </p>
+<ol>
+<li><strong>After Parallel Reduction</strong> </li>
+<li>Combined the two paths between B and D:  <ul>
+<li>Path 1 (B→C→D): 2 Ω + 4 Ω = 6 Ω  </li>
+<li>Path 2 (B→D): 4 Ω  </li>
+</ul>
+</li>
+<li>Equivalent parallel resistance:<br/>
+     $
+       R_{BD} = \bigl(\tfrac1{6} + \tfrac1{4}\bigr)^{-1} = 2.4\,\Omega
+     $</li>
+<li>
+<p><strong>Remaining resistors:</strong> </p>
+<ul>
+<li>A–B = 2 Ω  </li>
+<li>B–D = 2.4 Ω  </li>
+<li>D–E = 1 Ω  </li>
+</ul>
+</li>
+<li>
+<p><strong>After Final Series Reduction</strong> </p>
+</li>
+<li>The series chain A→B→D→E collapses to:<br/>
+     $
+       R_{\rm eq} = 2 + 2.4 + 1 = 5.4\,\Omega
+     $</li>
+<li><strong>Final equivalent resistor:</strong> A–E = 5.4 Ω  </li>
+</ol>
+<hr/>
+<h2 id="notes">Notes</h2>
+<ul>
+<li><strong>Graph-Theory Mapping:</strong> </li>
+<li><strong>Nodes</strong> ↔ circuit junctions  </li>
+<li>
+<p><strong>Edges</strong> ↔ resistors (with a <code>resistance</code> attribute)</p>
+</li>
+<li>
+<p><strong>Reduction Rules:</strong> </p>
+</li>
+<li><strong>Parallel:</strong> <span class="arithmatex">\(R_{\rm eq}=\bigl(\sum\tfrac1{R_i}\bigr)^{-1}\)</span> </li>
+<li><strong>Series:</strong> <span class="arithmatex">\(R_{\rm eq}=\sum R_i\)</span></li>
+</ul>
+<p>Use this workflow to automate equivalent-resistance calculations for larger, more complex networks.</p>
 </div>
 </div><footer>
 <div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">
