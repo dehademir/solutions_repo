@@ -35,7 +35,7 @@ This makes it possible to simplify the circuit algorithmically.
 For circuits, we often use **`MultiGraph`** to model parallel resistors.
 
 ---
-[collab][)
+[collab][https://colab.research.google.com/drive/1fsUJpDVypQU71mnMMy1hdp6iO0DhJJAF)
 
 ![alt text](image-1.png)
 
