@@ -172,6 +172,69 @@
 <div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
 <div class="section" itemprop="articleBody">
 <h1 id="problem-1">Problem 1</h1>
+<h1 id="equivalent-resistance-using-graph-theory-with-networkx">Equivalent Resistance Using Graph Theory with NetworkX</h1>
+<h2 id="why-use-graph-theory">Why Use Graph Theory?</h2>
+<p>In electrical engineering, calculating <strong>equivalent resistance</strong> is essential for analyzing circuits. Traditionally, we simplify circuits by:
+- Combining <strong>resistors in series</strong> (add them)
+- Combining <strong>resistors in parallel</strong> (use the reciprocal formula)</p>
+<p>However, for <strong>complex circuits</strong>, especially those with mixed configurations or multiple loops, manual simplification becomes inefficient or error-prone.</p>
+<p><strong>Graph theory</strong> provides a structured, programmable approach by modeling circuits as <strong>graphs</strong>.</p>
+<hr/>
+<h2 id="core-idea-model-the-circuit-as-a-graph">Core Idea: Model the Circuit as a Graph</h2>
+<p>A <strong>circuit</strong> can be seen as a <strong>graph</strong>:
+- <strong>Nodes</strong> represent junction points in the circuit
+- <strong>Edges</strong> represent resistors between nodes, with resistance as a <strong>weight</strong> or <strong>attribute</strong></p>
+<p>This makes it possible to simplify the circuit algorithmically.</p>
+<hr/>
+<h2 id="networkx-graph-types">NetworkX Graph Types</h2>
+<table>
+<thead>
+<tr>
+<th>Graph Type</th>
+<th>Description</th>
+<th>Use Case</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Graph</code></td>
+<td>Undirected, no parallel edges</td>
+<td>Simple resistor networks</td>
+</tr>
+<tr>
+<td><code>DiGraph</code></td>
+<td>Directed graph</td>
+<td>Circuits with diodes or flow</td>
+</tr>
+<tr>
+<td><code>MultiGraph</code></td>
+<td>Allows multiple (parallel) edges</td>
+<td>Circuits with parallel resistors</td>
+</tr>
+<tr>
+<td><code>MultiDiGraph</code></td>
+<td>Directed with multiple edges</td>
+<td>Advanced cases with flow + parallel</td>
+</tr>
+</tbody>
+</table>
+<p>For circuits, we often use <strong><code>MultiGraph</code></strong> to model parallel resistors.</p>
+<hr/>
+<p>[collab][)</p>
+<p><img alt="alt text" src="../image-1.png"/></p>
+<h1 id="visualization-of-equivalent-resistance-using-graph-theory">Visualization of Equivalent Resistance Using Graph Theory</h1>
+<h2 id="objective">Objective</h2>
+<p>Use <strong>graph theory and NetworkX</strong> to simplify a nested resistor circuit into a single equivalent resistance step-by-step, and <strong>visualize each transformation</strong>.</p>
+<hr/>
+<h2 id="step-0-original-nested-circuit">Step 0: Original Nested Circuit</h2>
+<p>The circuit consists of:
+- A resistor between <code>A-B</code> of 2Ω
+- Two paths from <code>B → D</code>:
+  - Via <code>C</code>: <code>B-C</code> (2Ω) and <code>C-D</code> (4Ω)
+  - Direct: <code>B-D</code> (4Ω)
+- Final segment: <code>D-E</code> (1Ω)</p>
+<p><img alt="alt text" src="../image.png"/></p>
+<p><img alt="alt text" src="../image-3.png"/></p>
 </div>
 </div><footer>
 <div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">
