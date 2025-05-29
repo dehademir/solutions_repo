@@ -172,96 +172,99 @@
 <div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
 <div class="section" itemprop="articleBody">
 <h1 id="problem-2">Problem 2</h1>
-<h1 id="problem-2-estimating-using-monte-carlo-methods">Problem 2: Estimating π Using Monte Carlo Methods</h1>
-<hr/>
+<h1 id="problem-2-estimating-pi-using-monte-carlo-methods">Problem 2: Estimating <span class="arithmatex">\(\pi\)</span> Using Monte Carlo Methods</h1>
 <h2 id="motivation">Motivation</h2>
-<p>Monte Carlo methods are a class of algorithms that solve numerical and probabilistic problems by using <strong>random sampling</strong>. One of the most elegant applications is the estimation of the constant π, where randomness and geometry intersect beautifully.</p>
-<p>By simulating the outcomes of randomly generated events and observing their relation to geometric boundaries, we can approximate π in a way that is <strong>intuitive, visual, and computationally insightful</strong>.</p>
-<p>This exercise connects key ideas from:
-- Probability theory
-- Geometric reasoning
-- Numerical convergence
-- Simulation-based computation</p>
+<p>Monte Carlo methods are a class of algorithms that solve numerical and probabilistic problems using <strong>random sampling</strong>. One of the most elegant applications is the estimation of the constant <span class="arithmatex">\(\pi\)</span>, where randomness and geometry intersect beautifully.</p>
+<p>By simulating random events and observing how they relate to geometric boundaries, we can approximate <span class="arithmatex">\(\pi\)</span> in a way that is intuitive, visual, and computationally insightful.</p>
+<p>This problem connects key ideas from:</p>
+<ul>
+<li>Probability theory  </li>
+<li>Geometric reasoning  </li>
+<li>Numerical convergence  </li>
+<li>Simulation-based computation</li>
+</ul>
 <hr/>
-<h2 id="part-1-estimating-using-a-circle-geometric-probability">Part 1: Estimating π Using a Circle (Geometric Probability)</h2>
+<h2 id="part-1-estimating-pi-using-a-circle-geometric-probability">Part 1: Estimating <span class="arithmatex">\(\pi\)</span> Using a Circle (Geometric Probability)</h2>
 <h3 id="theoretical-foundation">Theoretical Foundation</h3>
-<p>Imagine a <strong>unit circle</strong> (radius = 1) perfectly inscribed in a square of side length 2. The area of the square is:</p>
-<div class="arithmatex">\[
-A_{\text{square}} = 2 \times 2 = 4
-\]</div>
-<p>The area of the unit circle is:</p>
-<div class="arithmatex">\[
-A_{\text{circle}} = \pi r^2 = \pi
-\]</div>
-<p>The ratio of the areas is:</p>
-<div class="arithmatex">\[
-\frac{A_{\text{circle}}}{A_{\text{square}}} = \frac{\pi}{4}
-\]</div>
-<p>This implies that if we throw random points into the square, the proportion of points that fall <strong>inside the circle</strong> is approximately <span class="arithmatex">\(\pi/4\)</span>. Thus, we can estimate π using:</p>
-<div class="arithmatex">\[
-\pi \approx 4 \cdot \left( \frac{\text{points inside the circle}}{\text{total points}} \right)
-\]</div>
+<p>Imagine a unit circle (radius = 1) perfectly inscribed in a square of side length 2:</p>
+<ul>
+<li>
+<p>Area of the square:<br/>
+<span class="arithmatex">\(A_\text{square} = 2 \times 2 = 4\)</span></p>
+</li>
+<li>
+<p>Area of the unit circle:<br/>
+<span class="arithmatex">\(A_\text{circle} = \pi r^2 = \pi\)</span></p>
+</li>
+<li>
+<p>Ratio of areas:<br/>
+<span class="arithmatex">\(\frac{A_\text{circle}}{A_\text{square}} = \frac{\pi}{4}\)</span></p>
+</li>
+</ul>
+<p>This implies that if we throw random points into the square, the proportion that falls inside the circle is approximately <span class="arithmatex">\(\frac{\pi}{4}\)</span>.</p>
+<p>Thus, we can estimate <span class="arithmatex">\(\pi\)</span> using:<br/>
+<span class="arithmatex">\(\pi \approx 4 \cdot \left( \frac{\text{points inside circle}}{\text{total points}} \right)\)</span></p>
+<hr/>
 <h3 id="simulation-process">Simulation Process</h3>
 <ol>
-<li>Generate <span class="arithmatex">\(n\)</span> random points in the square <span class="arithmatex">\([-1, 1] \times [-1, 1]\)</span>.</li>
-<li>Determine which points fall inside the unit circle using <span class="arithmatex">\(x^2 + y^2 \leq 1\)</span>.</li>
-<li>Count the points inside and outside.</li>
-<li>Use the ratio to estimate π.</li>
+<li>Generate <span class="arithmatex">\(n\)</span> random points in the square <span class="arithmatex">\([-1,1] \times [-1,1]\)</span></li>
+<li>Check if each point satisfies <span class="arithmatex">\(x^2 + y^2 \leq 1\)</span></li>
+<li>Count the number of points inside the circle</li>
+<li>Estimate <span class="arithmatex">\(\pi\)</span> with the formula:
+   <span class="arithmatex">\(\hat{\pi} = 4 \cdot \left( \frac{\text{inside points}}{n} \right)\)</span></li>
 </ol>
+<hr/>
 <h3 id="visualization">Visualization</h3>
-<p>A scatter plot can be created:
-- <strong>Blue points</strong> represent those inside the circle.
-- <strong>Red points</strong> are outside the circle but within the square.
-- A black outline indicates the exact circle.</p>
-<p>This allows us to <strong>see the estimation process geometrically</strong>.</p>
+<ul>
+<li><strong>Blue points</strong>: Inside the circle  </li>
+<li><strong>Red points</strong>: Outside the circle but within the square  </li>
+<li><strong>Black outline</strong>: Circle boundary  </li>
+</ul>
+<p>This allows us to see the estimation process geometrically.</p>
+<hr/>
 <h3 id="analysis">Analysis</h3>
 <ul>
-<li>The <strong>accuracy improves</strong> as the number of random points increases.</li>
-<li>For small samples, fluctuations are common.</li>
-<li>The convergence rate follows the <strong>law of large numbers</strong>:</li>
-</ul>
-<p>$$
-  \text{Error} \propto \frac{1}{\sqrt{n}}
-  $$</p>
-<ul>
-<li>The method is <strong>simple and visual</strong>, but <strong>converges slowly</strong>, requiring many samples for high precision.</li>
+<li>The accuracy improves as the number of random points increases.</li>
+<li>The convergence rate follows the law of large numbers:
+  <span class="arithmatex">\(\text{Error} \propto \frac{1}{\sqrt{n}}\)</span></li>
+<li>The method is simple and visual but converges slowly.</li>
 </ul>
 <hr/>
-<h2 id="part-2-estimating-using-buffons-needle-probabilistic-geometry">Part 2: Estimating π Using Buffon’s Needle (Probabilistic Geometry)</h2>
+<h2 id="part-2-estimating-pi-using-buffons-needle-probabilistic-geometry">Part 2: Estimating <span class="arithmatex">\(\pi\)</span> Using Buffon’s Needle (Probabilistic Geometry)</h2>
 <h3 id="theoretical-foundation_1">Theoretical Foundation</h3>
-<p>Buffon’s Needle is a classic problem in <strong>geometric probability</strong>. Imagine dropping a needle of length <span class="arithmatex">\(L\)</span> onto a surface with <strong>parallel horizontal lines</strong> spaced distance <span class="arithmatex">\(d\)</span> apart (<span class="arithmatex">\(L \leq d\)</span>). The probability that the needle <strong>crosses</strong> a line is:</p>
-<div class="arithmatex">\[
-P = \frac{2L}{d\pi}
-\]</div>
-<p>Rearranging for π, we estimate it as:</p>
-<div class="arithmatex">\[
-\pi \approx \frac{2L \cdot n}{d \cdot h}
-\]</div>
+<p>Buffon’s Needle is a classic problem in geometric probability.</p>
+<p>Imagine dropping a needle of length <span class="arithmatex">\(L\)</span> onto a surface with parallel horizontal lines spaced distance <span class="arithmatex">\(d\)</span> apart (where <span class="arithmatex">\(L \leq d\)</span>). The probability that the needle crosses a line is:</p>
+<p><span class="arithmatex">\(P = \frac{2L}{d\pi}\)</span></p>
+<p>Rearranging for <span class="arithmatex">\(\pi\)</span>, we estimate it as:</p>
+<p><span class="arithmatex">\(\pi \approx \frac{2L \cdot n}{d \cdot h}\)</span></p>
 <p>Where:
-- <span class="arithmatex">\(n\)</span> is the total number of needle drops
-- <span class="arithmatex">\(h\)</span> is the number of times the needle crosses a line</p>
+- <span class="arithmatex">\(n\)</span> = total number of needle drops<br/>
+- <span class="arithmatex">\(h\)</span> = number of times the needle crosses a line  </p>
+<hr/>
 <h3 id="simulation-process_1">Simulation Process</h3>
 <ol>
-<li>Define <span class="arithmatex">\(L\)</span> (needle length) and <span class="arithmatex">\(d\)</span> (distance between lines).</li>
-<li>Simulate <span class="arithmatex">\(n\)</span> needle drops:</li>
-<li>Random center position on the vertical axis.</li>
-<li>Random angle <span class="arithmatex">\(\theta\)</span> between <span class="arithmatex">\(0\)</span> and <span class="arithmatex">\(\pi\)</span>.</li>
-<li>Determine if the needle crosses a line using trigonometric conditions.</li>
-<li>Estimate π using the observed proportion of crossings.</li>
+<li>Set <span class="arithmatex">\(L\)</span> and <span class="arithmatex">\(d\)</span>, ensuring <span class="arithmatex">\(L \leq d\)</span></li>
+<li>For each of <span class="arithmatex">\(n\)</span> simulations:</li>
+<li>Randomly choose the needle’s center along the vertical axis</li>
+<li>Randomly choose angle <span class="arithmatex">\(\theta\)</span> between <span class="arithmatex">\(0\)</span> and <span class="arithmatex">\(\pi\)</span></li>
+<li>Use trigonometry to check whether the needle crosses a line</li>
+<li>Estimate <span class="arithmatex">\(\pi\)</span> using the formula:
+   <span class="arithmatex">\(\pi \approx \frac{2L \cdot n}{d \cdot h}\)</span></li>
 </ol>
-<h3 id="visualization_1">Visualization</h3>
+<hr/>
+<h3 id="visualization_1">📊 Visualization</h3>
 <ul>
-<li>The parallel lines are shown as equally spaced horizontal lines.</li>
-<li>Each needle is drawn:</li>
-<li><strong>Red</strong> if it crosses a line.</li>
-<li><strong>Blue</strong> if it does not.</li>
-<li>This creates an engaging geometric probability visualization.</li>
+<li><strong>Horizontal lines</strong>: Represent evenly spaced boundaries</li>
+<li><strong>Red needles</strong>: Cross a line</li>
+<li><strong>Blue needles</strong>: Do not cross a line</li>
 </ul>
+<p>This provides a probabilistic and geometric visualization.</p>
+<hr/>
 <h3 id="analysis_1">Analysis</h3>
 <ul>
-<li>Like the circle-based method, the <strong>accuracy improves</strong> with more trials.</li>
-<li>However, this method <strong>converges slower</strong> and is more <strong>sensitive to geometric constraints</strong>.</li>
-<li>It is particularly useful in demonstrating how <strong>experimental probability</strong> relates to mathematical constants.</li>
+<li>Like the circle-based method, more needle drops yield a more accurate result.</li>
+<li>Convergence is slower and more sensitive to configuration.</li>
+<li>Demonstrates the relationship between <strong>experimental probability</strong> and <strong>mathematical constants</strong>.</li>
 </ul>
 <hr/>
 <h2 id="deliverables">Deliverables</h2>
@@ -279,15 +282,15 @@ P = \frac{2L}{d\pi}
 </tr>
 <tr>
 <td>Visual Outputs</td>
-<td>Plots of point distribution (circle) and needle crossing (Buffon)</td>
+<td>Plots of point distribution (circle) and needle crossing</td>
 </tr>
 <tr>
 <td>Convergence Charts</td>
-<td>Graphs showing estimated π vs number of samples for each method</td>
+<td>Graphs showing <span class="arithmatex">\(\hat{\pi}\)</span> vs number of samples</td>
 </tr>
 <tr>
 <td>Analysis</td>
-<td>Comparison of convergence rate and accuracy between both simulation types</td>
+<td>Comparison of accuracy and convergence between both methods</td>
 </tr>
 </tbody>
 </table>
@@ -320,22 +323,29 @@ P = \frac{2L}{d\pi}
 </tr>
 </tbody>
 </table>
+<p>Both methods highlight the power of Monte Carlo simulations:</p>
 <ul>
-<li>Both methods highlight the power of <strong>Monte Carlo simulations</strong>.</li>
-<li>Circle-based approach is more <strong>efficient and visual</strong>.</li>
-<li>Buffon’s method offers a <strong>historic and probabilistic twist</strong>.</li>
+<li>Circle-based approach is more efficient and visual.</li>
+<li>Buffon’s method offers a historical and probabilistic twist.</li>
 </ul>
 <hr/>
 <h2 id="hints-tips">Hints &amp; Tips</h2>
 <ul>
-<li>Start with <strong>small samples</strong> to ensure your implementation works.</li>
-<li>Gradually <strong>scale up</strong> the number of trials to observe convergence.</li>
-<li>Use libraries like <strong>NumPy</strong> for efficient sampling and <strong>Matplotlib</strong> for visual feedback.</li>
-<li>Ensure <strong>uniform random distribution</strong> in all simulations for accuracy.</li>
+<li>Start with small samples to ensure your code works.</li>
+<li>Increase sample size to observe convergence.</li>
+<li>Use libraries like <strong>NumPy</strong> and <strong>Matplotlib</strong> for simulations and visualizations.</li>
+<li>Ensure <strong>uniform random distribution</strong> in all simulations for accurate results.</li>
 </ul>
 <hr/>
 <h2 id="final-note">Final Note</h2>
-<p>These experiments not only teach us about <span class="arithmatex">\(\pi\)</span>, but also about the <strong>core ideas of randomness, simulation, convergence, and reproducibility</strong> — foundational principles across mathematics, science, and engineering.</p>
+<p>These experiments not only teach us about <span class="arithmatex">\(\pi\)</span>, but also about:</p>
+<ul>
+<li><strong>Randomness</strong></li>
+<li><strong>Simulation</strong></li>
+<li><strong>Convergence</strong></li>
+<li><strong>Reproducibility</strong></li>
+</ul>
+<p>These are foundational concepts in mathematics, science, and engineering.</p>
 <hr/>
 <p><a href="https://colab.research.google.com/drive/10CvKTTT-QjSl0bnWkZGDVUa7A6SbA-2Q">colab</a></p>
 <p><img alt="alt text" src="../image-4.png"/></p>
@@ -370,8 +380,47 @@ P = \frac{2L}{d\pi}
 </ul>
 <hr/>
 <p>This is a foundational example of how randomness and geometry can be used together to estimate fundamental constants like π.</p>
+<p><img alt="alt text" src="../image-7.png"/></p>
+<h2 id="visualization_2">Visualization</h2>
+<p>The plot above shows the needle drops:</p>
+<ul>
+<li><strong>Black dashed lines</strong>: Parallel horizontal lines spaced at distance <span class="arithmatex">\(d\)</span>.</li>
+<li><strong>Red needles</strong>: Needles that <strong>cross</strong> a line (used in estimating <span class="arithmatex">\(\pi\)</span>).</li>
+<li><strong>Blue needles</strong>: Needles that <strong>do not cross</strong> any line.</li>
+</ul>
+<p>This visual representation illustrates the probabilistic basis for estimating <span class="arithmatex">\(\pi\)</span> using geometric intersections.</p>
+<hr/>
+<h2 id="observations">Observations</h2>
+<table>
+<thead>
+<tr>
+<th>Trials (n)</th>
+<th>Crossings (h)</th>
+<th>Estimated <span class="arithmatex">\(\pi\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1000</td>
+<td><em>e.g. 636</em></td>
+<td><span class="arithmatex">\(\approx 3.1419\)</span></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Accuracy improves with more needle drops.</li>
+<li>Results vary due to randomness, but converge with larger <span class="arithmatex">\(n\)</span>.</li>
+<li>This method converges <strong>more slowly</strong> than the circle-based Monte Carlo method.</li>
+</ul>
+<hr/>
+<h2 id="takeaway">Takeaway</h2>
+<p>Buffon’s Needle experiment demonstrates a brilliant connection between:
+- <strong>Randomness</strong>
+- <strong>Geometry</strong>
+- <strong>Fundamental constants</strong></p>
+<p>Even with simple physical setups, we can use <strong>probabilistic reasoning</strong> to estimate constants like <span class="arithmatex">\(\pi\)</span>.</p>
 <p><img alt="alt text" src="../image-5.png"/></p>
-<h2 id="convergence-of-monte-carlo-estimation-of-pi">📈 Convergence of Monte Carlo Estimation of <span class="arithmatex">\(\pi\)</span></h2>
+<h2 id="convergence-of-monte-carlo-estimation-of-pi">Convergence of Monte Carlo Estimation of <span class="arithmatex">\(\pi\)</span></h2>
 <p><img alt="Monte Carlo Convergence Plot" src="/mnt/data/d11b941e-3a92-40a9-8a37-ea7ea75a3f11.png"/></p>
 <h3 id="what-this-plot-shows">What This Plot Shows</h3>
 <p>This graph demonstrates how the Monte Carlo estimate of <span class="arithmatex">\(\pi\)</span> evolves as the number of randomly sampled points increases.</p>
@@ -389,7 +438,7 @@ P = \frac{2L}{d\pi}
   \pi \approx 4 \cdot \left( \frac{\text{points inside circle}}{\text{total points}} \right)
   $$</p>
 <hr/>
-<h3 id="observations">Observations</h3>
+<h3 id="observations_1">Observations</h3>
 <table>
 <thead>
 <tr>
