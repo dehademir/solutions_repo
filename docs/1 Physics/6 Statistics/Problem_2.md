@@ -1,162 +1,168 @@
 # Problem 2
 
-#  Problem 2: Estimating π Using Monte Carlo Methods
-
----
+# Problem 2: Estimating $\pi$ Using Monte Carlo Methods
 
 ##  Motivation
 
-Monte Carlo methods are a class of algorithms that solve numerical and probabilistic problems by using **random sampling**. One of the most elegant applications is the estimation of the constant π, where randomness and geometry intersect beautifully.
+Monte Carlo methods are a class of algorithms that solve numerical and probabilistic problems using **random sampling**. One of the most elegant applications is the estimation of the constant $\pi$, where randomness and geometry intersect beautifully.
 
-By simulating the outcomes of randomly generated events and observing their relation to geometric boundaries, we can approximate π in a way that is **intuitive, visual, and computationally insightful**.
+By simulating random events and observing how they relate to geometric boundaries, we can approximate $\pi$ in a way that is intuitive, visual, and computationally insightful.
 
-This exercise connects key ideas from:
-- Probability theory
-- Geometric reasoning
-- Numerical convergence
+This problem connects key ideas from:
+
+- Probability theory  
+- Geometric reasoning  
+- Numerical convergence  
 - Simulation-based computation
 
 ---
 
-##  Part 1: Estimating π Using a Circle (Geometric Probability)
+##  Part 1: Estimating $\pi$ Using a Circle (Geometric Probability)
 
 ###  Theoretical Foundation
 
-Imagine a **unit circle** (radius = 1) perfectly inscribed in a square of side length 2. The area of the square is:
+Imagine a unit circle (radius = 1) perfectly inscribed in a square of side length 2:
 
-$$
-A_{\text{square}} = 2 \times 2 = 4
-$$
+- Area of the square:  
+  $A_\text{square} = 2 \times 2 = 4$
 
-The area of the unit circle is:
+- Area of the unit circle:  
+  $A_\text{circle} = \pi r^2 = \pi$
 
-$$
-A_{\text{circle}} = \pi r^2 = \pi
-$$
+- Ratio of areas:  
+  $\frac{A_\text{circle}}{A_\text{square}} = \frac{\pi}{4}$
 
-The ratio of the areas is:
+This implies that if we throw random points into the square, the proportion that falls inside the circle is approximately $\frac{\pi}{4}$.
 
-$$
-\frac{A_{\text{circle}}}{A_{\text{square}}} = \frac{\pi}{4}
-$$
-
-This implies that if we throw random points into the square, the proportion of points that fall **inside the circle** is approximately $\pi/4$. Thus, we can estimate π using:
-
-$$
-\pi \approx 4 \cdot \left( \frac{\text{points inside the circle}}{\text{total points}} \right)
-$$
-
-###  Simulation Process
-
-1. Generate $n$ random points in the square $[-1, 1] \times [-1, 1]$.
-2. Determine which points fall inside the unit circle using $x^2 + y^2 \leq 1$.
-3. Count the points inside and outside.
-4. Use the ratio to estimate π.
-
-###  Visualization
-
-A scatter plot can be created:
-- **Blue points** represent those inside the circle.
-- **Red points** are outside the circle but within the square.
-- A black outline indicates the exact circle.
-
-This allows us to **see the estimation process geometrically**.
-
-###  Analysis
-
-- The **accuracy improves** as the number of random points increases.
-- For small samples, fluctuations are common.
-- The convergence rate follows the **law of large numbers**:
-  
-  $$
-  \text{Error} \propto \frac{1}{\sqrt{n}}
-  $$
-
-- The method is **simple and visual**, but **converges slowly**, requiring many samples for high precision.
+Thus, we can estimate $\pi$ using:  
+$\pi \approx 4 \cdot \left( \frac{\text{points inside circle}}{\text{total points}} \right)$
 
 ---
 
-##  Part 2: Estimating π Using Buffon’s Needle (Probabilistic Geometry)
-
-###  Theoretical Foundation
-
-Buffon’s Needle is a classic problem in **geometric probability**. Imagine dropping a needle of length $L$ onto a surface with **parallel horizontal lines** spaced distance $d$ apart ($L \leq d$). The probability that the needle **crosses** a line is:
-
-$$
-P = \frac{2L}{d\pi}
-$$
-
-Rearranging for π, we estimate it as:
-
-$$
-\pi \approx \frac{2L \cdot n}{d \cdot h}
-$$
-
-Where:
-- $n$ is the total number of needle drops
-- $h$ is the number of times the needle crosses a line
-
 ###  Simulation Process
 
-1. Define $L$ (needle length) and $d$ (distance between lines).
-2. Simulate $n$ needle drops:
-   - Random center position on the vertical axis.
-   - Random angle $\theta$ between $0$ and $\pi$.
-3. Determine if the needle crosses a line using trigonometric conditions.
-4. Estimate π using the observed proportion of crossings.
+1. Generate $n$ random points in the square $[-1,1] \times [-1,1]$
+2. Check if each point satisfies $x^2 + y^2 \leq 1$
+3. Count the number of points inside the circle
+4. Estimate $\pi$ with the formula:
+   $\hat{\pi} = 4 \cdot \left( \frac{\text{inside points}}{n} \right)$
+
+---
 
 ###  Visualization
 
-- The parallel lines are shown as equally spaced horizontal lines.
-- Each needle is drawn:
-  - **Red** if it crosses a line.
-  - **Blue** if it does not.
-- This creates an engaging geometric probability visualization.
+- **Blue points**: Inside the circle  
+- **Red points**: Outside the circle but within the square  
+- **Black outline**: Circle boundary  
+
+This allows us to see the estimation process geometrically.
+
+---
 
 ###  Analysis
 
-- Like the circle-based method, the **accuracy improves** with more trials.
-- However, this method **converges slower** and is more **sensitive to geometric constraints**.
-- It is particularly useful in demonstrating how **experimental probability** relates to mathematical constants.
+- The accuracy improves as the number of random points increases.
+- The convergence rate follows the law of large numbers:
+  $\text{Error} \propto \frac{1}{\sqrt{n}}$
+- The method is simple and visual but converges slowly.
+
+---
+
+## Part 2: Estimating $\pi$ Using Buffon’s Needle (Probabilistic Geometry)
+
+###  Theoretical Foundation
+
+Buffon’s Needle is a classic problem in geometric probability.
+
+Imagine dropping a needle of length $L$ onto a surface with parallel horizontal lines spaced distance $d$ apart (where $L \leq d$). The probability that the needle crosses a line is:
+
+$P = \frac{2L}{d\pi}$
+
+Rearranging for $\pi$, we estimate it as:
+
+$\pi \approx \frac{2L \cdot n}{d \cdot h}$
+
+Where:
+- $n$ = total number of needle drops  
+- $h$ = number of times the needle crosses a line  
+
+---
+
+###  Simulation Process
+
+1. Set $L$ and $d$, ensuring $L \leq d$
+2. For each of $n$ simulations:
+   - Randomly choose the needle’s center along the vertical axis
+   - Randomly choose angle $\theta$ between $0$ and $\pi$
+   - Use trigonometry to check whether the needle crosses a line
+3. Estimate $\pi$ using the formula:
+   $\pi \approx \frac{2L \cdot n}{d \cdot h}$
+
+---
+
+### 📊 Visualization
+
+- **Horizontal lines**: Represent evenly spaced boundaries
+- **Red needles**: Cross a line
+- **Blue needles**: Do not cross a line
+
+This provides a probabilistic and geometric visualization.
+
+---
+
+###  Analysis
+
+- Like the circle-based method, more needle drops yield a more accurate result.
+- Convergence is slower and more sensitive to configuration.
+- Demonstrates the relationship between **experimental probability** and **mathematical constants**.
 
 ---
 
 ##  Deliverables
 
-| Component            | Description                                                                 |
-|----------------------|-----------------------------------------------------------------------------|
-|  Markdown Document | Full explanation of both simulation approaches                              |
-|  Visual Outputs     | Plots of point distribution (circle) and needle crossing (Buffon)          |
-|  Convergence Charts | Graphs showing estimated π vs number of samples for each method             |
-|  Analysis           | Comparison of convergence rate and accuracy between both simulation types |
+| Component           | Description                                                   |
+|---------------------|---------------------------------------------------------------|
+| Markdown Document   | Full explanation of both simulation approaches                |
+| Visual Outputs      | Plots of point distribution (circle) and needle crossing      |
+| Convergence Charts  | Graphs showing $\hat{\pi}$ vs number of samples               |
+| Analysis            | Comparison of accuracy and convergence between both methods   |
 
 ---
 
 ##  Summary
 
-| Method               | Type           | Convergence Speed | Visualization Strength | Educational Value |
-|----------------------|----------------|-------------------|------------------------|-------------------|
-| Circle-Based         | Geometric Area |  Moderate        |  Excellent         |  Excellent    |
-| Buffon’s Needle      | Probabilistic  |  Slower         |  Good               |  Strong       |
+| Method         | Type              | Convergence Speed | Visualization Strength | Educational Value |
+|----------------|-------------------|-------------------|------------------------|--------------------|
+| Circle-Based   | Geometric Area    | Moderate          | Excellent              | Excellent          |
+| Buffon’s Needle| Probabilistic     | Slower            | Good                   | Strong             |
 
-- Both methods highlight the power of **Monte Carlo simulations**.
-- Circle-based approach is more **efficient and visual**.
-- Buffon’s method offers a **historic and probabilistic twist**.
+Both methods highlight the power of Monte Carlo simulations:
+
+- Circle-based approach is more efficient and visual.
+- Buffon’s method offers a historical and probabilistic twist.
 
 ---
 
 ##  Hints & Tips
 
-- Start with **small samples** to ensure your implementation works.
-- Gradually **scale up** the number of trials to observe convergence.
-- Use libraries like **NumPy** for efficient sampling and **Matplotlib** for visual feedback.
-- Ensure **uniform random distribution** in all simulations for accuracy.
+- Start with small samples to ensure your code works.
+- Increase sample size to observe convergence.
+- Use libraries like **NumPy** and **Matplotlib** for simulations and visualizations.
+- Ensure **uniform random distribution** in all simulations for accurate results.
 
 ---
 
 ##  Final Note
 
-These experiments not only teach us about $\pi$, but also about the **core ideas of randomness, simulation, convergence, and reproducibility** — foundational principles across mathematics, science, and engineering.
+These experiments not only teach us about $\pi$, but also about:
+
+- **Randomness**
+- **Simulation**
+- **Convergence**
+- **Reproducibility**
+
+These are foundational concepts in mathematics, science, and engineering.
+
 
 
 
@@ -207,10 +213,46 @@ $$
 
 This is a foundational example of how randomness and geometry can be used together to estimate fundamental constants like π.
 
+![alt text](image-7.png)
+
+##  Visualization
+
+The plot above shows the needle drops:
+
+- **Black dashed lines**: Parallel horizontal lines spaced at distance $d$.
+- **Red needles**: Needles that **cross** a line (used in estimating $\pi$).
+- **Blue needles**: Needles that **do not cross** any line.
+
+This visual representation illustrates the probabilistic basis for estimating $\pi$ using geometric intersections.
+
+---
+
+##  Observations
+
+| Trials (n) | Crossings (h) | Estimated $\pi$ |
+|------------|----------------|------------------|
+| 1000       | *e.g. 636*     | $\approx 3.1419$ |
+
+- Accuracy improves with more needle drops.
+- Results vary due to randomness, but converge with larger $n$.
+- This method converges **more slowly** than the circle-based Monte Carlo method.
+
+---
+
+##  Takeaway
+
+Buffon’s Needle experiment demonstrates a brilliant connection between:
+- **Randomness**
+- **Geometry**
+- **Fundamental constants**
+
+Even with simple physical setups, we can use **probabilistic reasoning** to estimate constants like $\pi$.
+
+
 
 ![alt text](image-5.png)
 
-## 📈 Convergence of Monte Carlo Estimation of $\pi$
+##  Convergence of Monte Carlo Estimation of $\pi$
 
 ![Monte Carlo Convergence Plot](/mnt/data/d11b941e-3a92-40a9-8a37-ea7ea75a3f11.png)
 
