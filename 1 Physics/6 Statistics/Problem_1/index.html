@@ -172,6 +172,118 @@
 <div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
 <div class="section" itemprop="articleBody">
 <h1 id="problem-1">Problem 1</h1>
+<h1 id="central-limit-theorem-clt-exploration-via-simulation">Central Limit Theorem (CLT) Exploration via Simulation</h1>
+<h2 id="objective">Objective</h2>
+<p>Understand and visualize the <strong>Central Limit Theorem</strong> by simulating sampling distributions from different population types, analyzing how sample size and population variance affect convergence to normality.</p>
+<hr/>
+<h2 id="theoretical-background">Theoretical Background</h2>
+<h3 id="what-is-the-central-limit-theorem-clt">What is the Central Limit Theorem (CLT)?</h3>
+<blockquote>
+<p>The Central Limit Theorem states that for a sufficiently large sample size, the <strong>sampling distribution of the sample mean</strong> becomes approximately <strong>normally distributed</strong>, regardless of the population’s original distribution.</p>
+</blockquote>
+<h3 id="key-properties">Key Properties:</h3>
+<ul>
+<li>Applies to <strong>independent and identically distributed (i.i.d.)</strong> random variables.</li>
+<li>The mean of the sampling distribution = population mean (<span class="arithmatex">\(\mu\)</span>)</li>
+<li>The standard deviation = <span class="arithmatex">\(\sigma / \sqrt{n}\)</span>, where <span class="arithmatex">\(n\)</span> is the sample size.</li>
+</ul>
+<hr/>
+<h2 id="simulation-plan">Simulation Plan</h2>
+<h3 id="1-population-distributions-to-explore">1. Population Distributions to Explore</h3>
+<p>We will simulate populations from:
+- <strong>Uniform distribution</strong>: flat, bounded
+- <strong>Exponential distribution</strong>: right-skewed
+- <strong>Binomial distribution</strong>: discrete</p>
+<h3 id="2-sampling-procedure">2. Sampling Procedure</h3>
+<p>For each population:
+- Generate a population of 100,000 values
+- Draw <strong>repeated random samples</strong> (e.g., 1000 times)
+- Use <strong>varying sample sizes</strong>: 5, 10, 30, 50
+- Compute and store the <strong>sample means</strong></p>
+<h3 id="3-visualization">3. Visualization</h3>
+<ul>
+<li>Plot <strong>histograms</strong> of the sample means for each distribution and sample size</li>
+<li>Overlay the <strong>normal distribution curve</strong> for comparison</li>
+</ul>
+<hr/>
+<h1 id="visualizing-the-central-limit-theorem-clt">Visualizing the Central Limit Theorem (CLT)</h1>
+<h2 id="simulation-setup">Simulation Setup</h2>
+<p>We generated large populations from three different distributions:</p>
+<ol>
+<li><strong>Uniform [0, 1]</strong></li>
+<li><strong>Exponential (λ = 1)</strong></li>
+<li><strong>Binomial (n = 10, p = 0.5)</strong></li>
+</ol>
+<p>From each population:
+- We drew <strong>1000 samples</strong> for each of the following sample sizes: <strong>5, 10, 30, 50</strong>
+- For each sample, we computed the <strong>sample mean</strong>
+- We then plotted the <strong>distribution of these sample means</strong></p>
+<hr/>
+<h2 id="interpretation-of-results">Interpretation of Results</h2>
+<ul>
+<li>
+<p><strong>Uniform Distribution</strong>:<br/>
+  Even though the original distribution is flat, the sampling distribution of the mean becomes bell-shaped quickly (by sample size 30).</p>
+</li>
+<li>
+<p><strong>Exponential Distribution</strong>:<br/>
+  Originally highly skewed, yet the sample means converge toward normality as sample size increases.</p>
+</li>
+<li>
+<p><strong>Binomial Distribution (Discrete)</strong>:<br/>
+  Despite being made of whole numbers, the sample mean distribution becomes smooth and normal-like at larger sample sizes.</p>
+</li>
+</ul>
+<hr/>
+<h2 id="clt-in-action">CLT in Action</h2>
+<p>This experiment demonstrates:</p>
+<table>
+<thead>
+<tr>
+<th>Sample Size</th>
+<th>Shape of Sampling Distribution</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>5</td>
+<td>Often skewed or irregular</td>
+</tr>
+<tr>
+<td>10</td>
+<td>Begins to smooth out</td>
+</tr>
+<tr>
+<td>30</td>
+<td>Approaching normal shape</td>
+</tr>
+<tr>
+<td>50</td>
+<td>Closely approximates normal</td>
+</tr>
+</tbody>
+</table>
+<hr/>
+<p><a href="https://colab.research.google.com/drive/13RQIym31pOwnJKTRLitfwWuX7ScE7sll">colab</a></p>
+<p><img alt="alt text" src="../image.png"/></p>
+<h2 id="exponential-distribution-1-sample-size-5">Exponential Distribution (λ = 1) – Sample Size = 5</h2>
+<p><img alt="Exponential Sample Size 5" src="insert image path if needed"/></p>
+<h3 id="interpretation">Interpretation:</h3>
+<ul>
+<li>This histogram shows the distribution of <strong>1000 sample means</strong>, each calculated from a sample of size <strong>5</strong> drawn from an <strong>exponential population</strong> (λ = 1).</li>
+<li>The <strong>red dashed curve</strong> represents the theoretical <strong>normal distribution</strong> fitted to the observed sample means (using the computed mean and standard deviation).</li>
+</ul>
+<h3 id="observations">Observations:</h3>
+<ul>
+<li>The distribution of sample means is still <strong>right-skewed</strong>, closely resembling the original exponential population.</li>
+<li><strong>Skewness is preserved</strong> when the sample size is small, which is why the distribution does not yet resemble a normal curve.</li>
+<li>Although the Central Limit Theorem (CLT) guarantees convergence toward normality, this example shows that a <strong>sample size of 5 is not large enough</strong> for the CLT to take full effect for highly skewed populations.</li>
+</ul>
+<h3 id="conclusion">Conclusion:</h3>
+<p>This visualization demonstrates that:
+- For <strong>small sample sizes</strong>, the <strong>sampling distribution of the mean</strong> still reflects the original population’s shape.
+- The Central Limit Theorem requires <strong>larger sample sizes</strong> to work effectively when the original distribution is skewed, such as exponential distributions.</p>
+<p><img alt="alt text" src="../image-1.png"/></p>
 </div>
 </div><footer>
 <div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">
