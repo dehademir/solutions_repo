@@ -212,9 +212,7 @@ The figure below illustrates the step-by-step reduction of a nested resistor net
      - Path 1 (B→C→D): 2 Ω + 4 Ω = 6 Ω  
      - Path 2 (B→D): 4 Ω  
    - Equivalent parallel resistance:  
-     $
-       R_{BD} = \bigl(\tfrac1{6} + \tfrac1{4}\bigr)^{-1} = 2.4\,\Omega
-     $
+     $R_{BD} = \bigl(\tfrac1{6} + \tfrac1{4}\bigr)^{-1} = 2.4\,\Omega$
    - **Remaining resistors:**  
      - A–B = 2 Ω  
      - B–D = 2.4 Ω  
@@ -222,9 +220,7 @@ The figure below illustrates the step-by-step reduction of a nested resistor net
 
 3. **After Final Series Reduction**  
    - The series chain A→B→D→E collapses to:  
-     $
-       R_{\rm eq} = 2 + 2.4 + 1 = 5.4\,\Omega
-     $
+     $R_{\rm eq} = 2 + 2.4 + 1 = 5.4\,\Omega$
    - **Final equivalent resistor:** A–E = 5.4 Ω  
 
 ---
