@@ -172,6 +172,242 @@
 <div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
 <div class="section" itemprop="articleBody">
 <h1 id="problem-1">Problem 1</h1>
+<h1 id="measurements">Measurements</h1>
+<h2 id="problem-1-measuring-earths-gravitational-acceleration-with-a-pendulum">Problem 1: Measuring Earth's Gravitational Acceleration with a Pendulum</h2>
+<h3 id="motivation">Motivation</h3>
+<p>The acceleration due to gravity, <span class="arithmatex">\(g\)</span>, is a fundamental physical constant. One classic method of measuring <span class="arithmatex">\(g\)</span> involves using a simple pendulum. This method is based on the formula relating the period of a pendulum's oscillation to gravitational acceleration:</p>
+<div class="arithmatex">\[
+T = 2\pi \sqrt{\frac{L}{g}}
+\Rightarrow g = \frac{4\pi^2 L}{T^2}
+\]</div>
+<p>By carefully measuring the pendulum’s period and length, we can estimate <span class="arithmatex">\(g\)</span> and analyze the uncertainties involved.</p>
+<hr/>
+<h3 id="task">Task</h3>
+<p>To <strong>measure</strong> the gravitational acceleration <span class="arithmatex">\(g\)</span> and perform a <strong>detailed uncertainty analysis</strong> using:</p>
+<ul>
+<li>A simple pendulum</li>
+<li>Repeated time measurements</li>
+<li>Statistical and propagation of uncertainty techniques</li>
+</ul>
+<hr/>
+<h3 id="procedure">Procedure</h3>
+<h4 id="1-materials">1. Materials</h4>
+<ul>
+<li>String (approx. 1–1.5 m)</li>
+<li>Small mass (e.g., keys, bag of sugar, coins)</li>
+<li>Stopwatch or smartphone</li>
+<li>Measuring tape or ruler</li>
+</ul>
+<h4 id="2-setup">2. Setup</h4>
+<ul>
+<li>Attach the mass to one end of the string.</li>
+<li>Fix the other end securely.</li>
+<li>Measure the length <span class="arithmatex">\(L\)</span> from the pivot to the <strong>center of mass</strong> of the object.</li>
+<li>Record:</li>
+<li><span class="arithmatex">\(L\)</span></li>
+<li>Resolution of the ruler → <span class="arithmatex">\(\Delta L = \frac{\text{resolution}}{2}\)</span></li>
+</ul>
+<h4 id="3-data-collection">3. Data Collection</h4>
+<ul>
+<li>Displace pendulum by less than <span class="arithmatex">\(15^\circ\)</span> and release.</li>
+<li>Measure time for <strong>10 full oscillations</strong>: <span class="arithmatex">\(T_{10}\)</span></li>
+<li>Repeat 10 times → collect: <span class="arithmatex">\(T_{10}^{(1)}, T_{10}^{(2)}, ..., T_{10}^{(10)}\)</span></li>
+<li>Compute:</li>
+<li>Mean: <span class="arithmatex">\(\overline{T}_{10}\)</span></li>
+<li>Standard deviation: <span class="arithmatex">\(\sigma_T\)</span></li>
+<li>Uncertainty in the mean: <span class="arithmatex">\(\Delta T_{10} = \frac{\sigma_T}{\sqrt{n}}\)</span>, where <span class="arithmatex">\(n = 10\)</span></li>
+</ul>
+<hr/>
+<h3 id="calculations">Calculations</h3>
+<h4 id="1-period-of-one-oscillation">1. Period of One Oscillation</h4>
+<div class="arithmatex">\[
+T = \frac{\overline{T}_{10}}{10}, \quad \Delta T = \frac{\Delta T_{10}}{10}
+\]</div>
+<h4 id="2-gravitational-acceleration">2. Gravitational Acceleration</h4>
+<div class="arithmatex">\[
+g = \frac{4\pi^2 L}{T^2}
+\]</div>
+<h4 id="3-propagation-of-uncertainty">3. Propagation of Uncertainty</h4>
+<div class="arithmatex">\[
+\Delta g = g \cdot \sqrt{\left(\frac{\Delta L}{L}\right)^2 + \left(2 \cdot \frac{\Delta T}{T}\right)^2}
+\]</div>
+<hr/>
+<h3 id="sample-data-table">Sample Data Table</h3>
+<table>
+<thead>
+<tr>
+<th>Measurement</th>
+<th><span class="arithmatex">\(T_{10}\)</span> (s)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Trial 1</td>
+<td>18.60</td>
+</tr>
+<tr>
+<td>Trial 2</td>
+<td>18.55</td>
+</tr>
+<tr>
+<td>Trial 3</td>
+<td>18.70</td>
+</tr>
+<tr>
+<td>...</td>
+<td>...</td>
+</tr>
+<tr>
+<td>Trial 10</td>
+<td>18.63</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Other Measurements:</strong></p>
+<ul>
+<li><span class="arithmatex">\(L = 1.200\)</span> m  </li>
+<li>Ruler resolution = 0.01 m ⇒ <span class="arithmatex">\(\Delta L = 0.005\)</span> m  </li>
+<li><span class="arithmatex">\(\overline{T}_{10} = 18.62\)</span> s  </li>
+<li><span class="arithmatex">\(\sigma_T = 0.06\)</span> s ⇒ <span class="arithmatex">\(\Delta T_{10} = 0.019\)</span> s ⇒ <span class="arithmatex">\(\Delta T = 0.0019\)</span> s  </li>
+</ul>
+<hr/>
+<h3 id="final-result-example">Final Result Example</h3>
+<ul>
+<li><span class="arithmatex">\(T = 1.862\)</span> s</li>
+<li><span class="arithmatex">\(g = \frac{4\pi^2 \cdot 1.2}{(1.862)^2} ≈ 9.78 \, \text{m/s}^2\)</span></li>
+<li><span class="arithmatex">\(\Delta g ≈ 0.10 \, \text{m/s}^2\)</span></li>
+</ul>
+<p><span class="arithmatex">\(\boxed{g = 9.78 \pm 0.10 \, \text{m/s}^2}\)</span></p>
+<hr/>
+<h3 id="analysis">Analysis</h3>
+<ul>
+<li><strong>Compare with true value:</strong> <span class="arithmatex">\(g_{\text{true}} = 9.81 \, \text{m/s}^2\)</span></li>
+<li><strong>Uncertainty sources:</strong></li>
+<li>Timing variability → affects <span class="arithmatex">\(\Delta T\)</span></li>
+<li>Length measurement → affects <span class="arithmatex">\(\Delta L\)</span></li>
+<li><strong>Assumptions:</strong></li>
+<li>Small-angle approximation valid</li>
+<li>No air resistance or damping</li>
+<li><strong>Improvements:</strong></li>
+<li>More trials</li>
+<li>Use motion sensors instead of manual timing</li>
+</ul>
+<hr/>
+<h3 id="deliverables">Deliverables</h3>
+<ul>
+<li>Tabulated raw and statistical data</li>
+<li>Final value of <span class="arithmatex">\(g\)</span> and its uncertainty</li>
+<li>Detailed analysis of error sources and assumptions</li>
+</ul>
+<p><a href="https://colab.research.google.com/drive/12snoiZw91Ui6GzaDJ06zrp1E3e0_H9nf">colab</a></p>
+<p><img alt="alt text" src="../image.png"/></p>
+<p><img alt="alt text" src="../image-1.png"/></p>
+<p><img alt="alt text" src="../image-2.png"/></p>
+<h1 id="measuring-gravitational-acceleration-with-a-pendulum">Measuring Gravitational Acceleration with a Pendulum</h1>
+<h2 id="1-given-data">1. Given Data</h2>
+<ul>
+<li>Number of trials: <span class="arithmatex">\(n = 10\)</span></li>
+<li>Measured pendulum length: <span class="arithmatex">\(L = 1.200 \, \text{m}\)</span></li>
+<li>Ruler resolution: <span class="arithmatex">\(0.01 \, \text{m} \Rightarrow \Delta L = \frac{0.01}{2} = 0.005 \, \text{m}\)</span></li>
+</ul>
+<h3 id="time-for-10-oscillations-manual-measurements">Time for 10 Oscillations (Manual Measurements):</h3>
+<table>
+<thead>
+<tr>
+<th>Trial</th>
+<th><span class="arithmatex">\(T_{10}\)</span> (s)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>21.90</td>
+</tr>
+<tr>
+<td>2</td>
+<td>21.95</td>
+</tr>
+<tr>
+<td>3</td>
+<td>21.87</td>
+</tr>
+<tr>
+<td>4</td>
+<td>21.94</td>
+</tr>
+<tr>
+<td>5</td>
+<td>21.88</td>
+</tr>
+<tr>
+<td>6</td>
+<td>21.93</td>
+</tr>
+<tr>
+<td>7</td>
+<td>21.89</td>
+</tr>
+<tr>
+<td>8</td>
+<td>21.96</td>
+</tr>
+<tr>
+<td>9</td>
+<td>21.89</td>
+</tr>
+<tr>
+<td>10</td>
+<td>21.95</td>
+</tr>
+</tbody>
+</table>
+<hr/>
+<h2 id="2-mean-and-uncertainty-of-time">2. Mean and Uncertainty of Time</h2>
+<h3 id="mean-of-t_10">Mean of <span class="arithmatex">\(T_{10}\)</span>:</h3>
+<div class="arithmatex">\[
+\overline{T}_{10} = \frac{1}{10} \sum_{i=1}^{10} T_{10}^{(i)} = 21.905 \, \text{s}
+\]</div>
+<h3 id="standard-deviation">Standard Deviation:</h3>
+<div class="arithmatex">\[
+\sigma_T = \sqrt{\frac{1}{n-1} \sum (T_{10}^{(i)} - \overline{T}_{10})^2} = 0.030 \, \text{s}
+\]</div>
+<h3 id="uncertainty-in-mean">Uncertainty in Mean:</h3>
+<div class="arithmatex">\[
+\Delta T_{10} = \frac{\sigma_T}{\sqrt{n}} = \frac{0.030}{\sqrt{10}} \approx 0.0096 \, \text{s}
+\]</div>
+<hr/>
+<h2 id="3-period-and-its-uncertainty">3. Period and Its Uncertainty</h2>
+<h3 id="period-of-one-oscillation">Period of one oscillation:</h3>
+<div class="arithmatex">\[
+T = \frac{\overline{T}_{10}}{10} = \frac{21.905}{10} = 2.1905 \, \text{s}
+\]</div>
+<h3 id="uncertainty-in-period">Uncertainty in Period:</h3>
+<div class="arithmatex">\[
+\Delta T = \frac{\Delta T_{10}}{10} = \frac{0.0096}{10} = 0.00096 \, \text{s}
+\]</div>
+<hr/>
+<h2 id="4-gravitational-acceleration-and-its-uncertainty">4. Gravitational Acceleration and Its Uncertainty</h2>
+<h3 id="formula">Formula:</h3>
+<div class="arithmatex">\[
+g = \frac{4\pi^2 L}{T^2}
+\]</div>
+<h3 id="plug-in-values">Plug in values:</h3>
+<div class="arithmatex">\[
+g = \frac{4 \cdot \pi^2 \cdot 1.200}{(2.1905)^2} \approx 9.87 \, \text{m/s}^2
+\]</div>
+<hr/>
+<h3 id="uncertainty-in-g">Uncertainty in <span class="arithmatex">\(g\)</span>:</h3>
+<p>Using propagation of uncertainty:</p>
+<div class="arithmatex">\[
+\Delta g = g \cdot \sqrt{\left( \frac{\Delta L}{L} \right)^2 + \left( 2 \cdot \frac{\Delta T}{T} \right)^2}
+\]</div>
+<div class="arithmatex">\[
+\Delta g = 9.87 \cdot \sqrt{ \left( \frac{0.005}{1.200} \right)^2 + \left( 2 \cdot \frac{0.00096}{2.1905} \right)^2 } \approx 0.042 \, \text{m/s}^2
+\]</div>
+<hr/>
+<h2 id="final-result">Final Result</h2>
+<p><strong><span class="arithmatex">\(g = 9.87 \pm 0.042 \, \text{m/s}^2\)</span></strong></p>
+<p>This value is very close to the standard gravitational acceleration <span class="arithmatex">\(9.81 \, \text{m/s}^2\)</span>.</p>
 </div>
 </div><footer>
 <div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">
